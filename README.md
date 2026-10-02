@@ -57,12 +57,14 @@ Include a generated reference table with its registered name:
 
 See [procedure](docs/procedure.md) for refreshing package and contract pins. Builds use only this repository and installed npm packages.
 
-## Host on Cloudflare Pages
+## Cloudflare Pages
 
-Create a Pages project connected to the repository when it has a remote. Use:
+The `minifield-docs` Pages project connects to [Minifield-Labs/minifield-docs](https://github.com/Minifield-Labs/minifield-docs). Pushes to `feat/initial-docs` publish to [minifield-docs.pages.dev](https://minifield-docs.pages.dev/). Other branches receive preview deployments.
 
 | Setting | Value |
 | --- | --- |
+| Project | `minifield-docs` |
+| Production branch | `feat/initial-docs` |
 | Root directory | Repository root |
 | Build command | `npm run build` |
 | Build output | `dist` |
@@ -77,7 +79,7 @@ npm run build
 wrangler pages deploy dist --project-name minifield-docs
 ```
 
-Set the Pages production branch to the branch you adopt for publication. Attach a custom domain through Pages after the first deployment. This initial local repository defines no production domain or deployment.
+The Git remote is `git@github.com:Minifield-Labs/minifield-docs.git`. The production branch is also the repository's initial default branch. Update both GitHub and Pages when adopting a different production branch. The project uses its Pages hostname and has no custom domain.
 
 Cloudflare reads `public/_headers` from the exported directory. The top-level `404.html` preserves normal missing-page responses rather than a single-page-app fallback. See [Cloudflare’s static HTML guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
 
