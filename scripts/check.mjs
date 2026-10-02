@@ -10,6 +10,13 @@ function checkTitles(html, title, url) {
   assert.ok(html.includes(renderToStaticMarkup(createElement('title', null, `${title} | Minifield Docs`))), `${url}: browser title`);
 }
 
+function checkPolicies(html, url) {
+  assert.ok(html.includes('aria-label="Legal"'), `${url}: legal navigation`);
+  for (const path of ['privacy', 'terms', 'cookies']) {
+    assert.ok(html.includes(`href="https://minifieldlabs.com/${path}"`), `${url}: canonical ${path} link`);
+  }
+}
+
 const docs = await loadDocs();
 const search = JSON.parse(await readFile('dist/search.json', 'utf8'));
 assert.equal(search.length, docs.length);
@@ -17,6 +24,7 @@ const pages = new Map();
 for (const doc of docs) {
   const html = await readFile(join('dist', doc.url, 'index.html'), 'utf8');
   checkTitles(html, doc.title, doc.url);
+  checkPolicies(html, doc.url);
   assert.ok(html.includes('<article class="prose">'), `${doc.url}: prerendered body`);
   assert.ok(html.includes('aria-current="page"'), `${doc.url}: current navigation`);
   assert.ok(html.includes('<main id="main" tabindex="-1">'), `${doc.url}: focusable skip-link target`);
@@ -57,6 +65,7 @@ for (const [url, html] of pages) {
   }
 }
 const notFound = await readFile('dist/404.html', 'utf8');
+checkPolicies(notFound, '/404');
 assert.ok(notFound.includes('Page not found') && notFound.includes('noindex'));
 const client = await readFile('dist/assets/docs.js', 'utf8');
 assert.ok(!client.includes('react.production') && !client.includes('react-dom'), 'Browser must not bundle React');

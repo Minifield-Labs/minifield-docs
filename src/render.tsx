@@ -70,7 +70,7 @@ export function renderPage(docs: Doc[], page?: Doc, development = false) {
             )}</nav>}
           </aside>
         </div>
-        <footer className="site-footer"><a href="https://minifieldlabs.com">Intelligence at human scale.</a><span>Minifield Labs</span></footer>
+        <footer className="site-footer"><a href="https://minifieldlabs.com">Intelligence at human scale.</a><span>Minifield Labs</span><nav className="policy-links" aria-label="Legal"><a href="https://minifieldlabs.com/privacy">Privacy Policy</a><a href="https://minifieldlabs.com/terms">Terms of Service</a><a href="https://minifieldlabs.com/cookies">Cookie Policy</a></nav></footer>
       </div>
       <dialog className="search-dialog" aria-labelledby="search-title">
         <div className="search-head"><h2 id="search-title">Search documentation</h2><button type="button" data-close-search aria-label="Close search (Esc)">Esc</button></div>
