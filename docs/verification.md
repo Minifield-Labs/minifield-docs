@@ -55,3 +55,15 @@ Runtime content now includes native Metal and dense F16/signed INT8 weight suppo
 - No browser warnings or errors were captured. Viewport overrides were cleared. The saved preview is ignored `.local/training-sidebar.jpg`.
 - Validation ran through the shared artifact-budget wrapper after an existing runtime phase released its lock. The build stayed within the storage caps. The full command log is ignored `.local/scope-check.log`. Final handoff cleanup passed with no removable intermediates; task storage was 7,410,823,168 bytes and free space was 31,392,600,064 bytes.
 - This remains a local preview. The repository has no remote or PR base branch.
+
+## Checked examples and generated references, October 2, 2026
+
+Moved 4 MagicBox TypeScript examples and 2 Training JSON fragments into source files included directly in the published pages. MagicBox examples compile against public package `0.1.0`. The new API reference derives 3 tables from that package's public declarations. Training derives 5 tables from pinned computation 12 and 13 schemas, with source revisions and checksums in `contracts/training/manifest.json`.
+
+- `npm run check` passed after the final changes: strict example compilation, lint, exact published-source checks, Training JSON validation, 19 static pages, 1,102 local links/assets, search coverage, custom 404, and browser enhancement checks.
+- The example checks cover inherited required/optional props, nullable span fields, exact uint64 limits, unsupported reference names, path traversal, and rejected invalid JSON fields and values. Schema bytes are checked before table generation.
+- The browser bundle remains 3.42 KB before gzip (1.45 KB gzipped), with no React runtime. Schema validation and TypeScript declaration processing run only during development and builds.
+- The API reference was inspected at 1440px, 900px, and 390px widths. The mobile field column now retains its 31% width; `sourceTitle` fits on one line. API and Training tables fit within the 312px mobile article, without horizontal document overflow.
+- The quickstart displayed its source filename and its copy button confirmed success. Searching for `rootProps` found the generated API reference. The browser reported no warnings or errors, and viewport overrides were cleared.
+- Independent review found no correctness or React structure defects. Authoring instructions and source provenance were updated. The saved production preview is ignored `.local/checked-reference.jpg`.
+- Final validation and handoff cleanup stayed within the workspace artifact limits. Cleanup found no removable intermediates; task storage was 8,026,341,376 bytes and free space was 27,588,501,504 bytes. This remains a local repository and preview; no remote or PR base branch exists.

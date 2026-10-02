@@ -18,7 +18,7 @@ npm run check
 npm run preview
 ```
 
-`check` runs TypeScript, lint, the production build, static link/asset checks, and search/contents regression checks. Preview serves the generated site on port 4330. Stop the dev server before starting preview.
+`check` runs TypeScript, lint, checked examples, the production build, static link/asset checks, and search/contents regression checks. Preview serves the generated site on port 4330. Stop the dev server before starting preview.
 
 ## Author pages
 
@@ -36,6 +36,26 @@ order: 24
 Use a unique integer order. Groups follow the first page’s order. Start body headings at H2. Navigation, previous/next links, page contents, and the full-text search index derive from the same source.
 
 Use root-relative internal links with trailing slashes, such as `/runtime-browser/`. Use fenced code with `tsx`, `typescript`, `javascript`, `json`, `bash`, `yaml`, `rust`, or `text`. Markdown is trusted repository source. Review raw HTML in content as application code.
+
+### Checked examples and generated references
+
+Keep reusable examples in `examples/` and include their exact source with a standalone directive:
+
+```html
+<!-- example: examples/magicbox/contact-input.tsx -->
+```
+
+MagicBox examples compile against the exact package version in `package.json` and `package-lock.json`. Training JSON examples validate against their matching definitions in the pinned job schema. Run `npm run check:examples` for these checks alone. Example and contract edits also reload the development page.
+
+Include a generated reference table with its registered name:
+
+```html
+<!-- reference: magicbox-props -->
+```
+
+`scripts/magicbox-reference.mjs` reads the installed package's public TypeScript declarations, including inherited fields. `scripts/training-reference.mjs` renders fields, types, bounds, and defaults from checksummed snapshots in `contracts/training/`. Both run during Markdown compilation, so tables and examples participate in search. Missing sources, unknown references, unsupported schema shapes, and checksum mismatches fail the build.
+
+See [procedure](docs/procedure.md) for refreshing package and contract pins. Builds use only this repository and installed npm packages.
 
 ## Host on Cloudflare Pages
 

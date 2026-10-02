@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { Marked } from 'marked';
 import GithubSlugger from 'github-slugger';
 import { createHighlighter } from 'shiki';
+import { documentationReferences, expandDocumentation } from '../scripts/documentation.mjs';
 
 export type Doc = {
   slug: string;
@@ -27,8 +28,10 @@ const highlighter = createHighlighter({
 // Authored repository Markdown is trusted input. Never accept remote content here.
 export async function loadDocs(directory = join(process.cwd(), 'content')): Promise<Doc[]> {
   const highlight = await highlighter;
+  const references = await documentationReferences();
   const docs = await Promise.all((await readdir(directory)).filter((name) => name.endsWith('.md')).map(async (file) => {
-    const { data, content } = matter(await readFile(join(directory, file), 'utf8'));
+    const { data, content: authored } = matter(await readFile(join(directory, file), 'utf8'));
+    const content = await expandDocumentation(authored, file, references);
     for (const field of ['title', 'description', 'group']) {
       if (typeof data[field] !== 'string' || !data[field].trim()) throw new Error(`${file}: missing ${field}`);
     }
@@ -48,8 +51,9 @@ export async function loadDocs(directory = join(process.cwd(), 'content')): Prom
         },
         code({ text, lang }) {
           const language = lang?.split(' ')[0] || 'text';
+          const filename = lang?.match(/\bfilename="([^"]+)"/)?.[1];
           if (language !== 'text' && !highlight.getLoadedLanguages().includes(language)) throw new Error(`${file}: unsupported language ${language}`);
-          return `<div class="code-block"><div class="code-toolbar"><span>${escapeHtml(language)}</span><button type="button" data-copy aria-label="Copy code">Copy</button></div>${highlight.codeToHtml(text, { lang: language, theme: 'github-dark' })}</div>`;
+          return `<div class="code-block"><div class="code-toolbar"><span>${escapeHtml(filename ?? language)}</span><button type="button" data-copy aria-label="${escapeHtml(filename ? `Copy ${filename}` : 'Copy code')}">Copy</button></div>${highlight.codeToHtml(text, { lang: language, theme: 'github-dark' })}</div>`;
         },
       },
     });

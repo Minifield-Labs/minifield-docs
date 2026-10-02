@@ -14,9 +14,9 @@ export default defineConfig({
   plugins: [{
     name: 'static-docs-development',
     configureServer(server) {
-      server.watcher.add('content');
+      server.watcher.add(['content', 'examples', 'contracts']);
       server.watcher.on('all', (event, path) => {
-        if (['add', 'change', 'unlink'].includes(event) && path.endsWith('.md')) server.ws.send({ type: 'full-reload' });
+        if (['add', 'change', 'unlink'].includes(event) && /\.(md|tsx?|json)$/.test(path)) server.ws.send({ type: 'full-reload' });
       });
       return () => {
         server.middlewares.use(async (req, res, next) => {

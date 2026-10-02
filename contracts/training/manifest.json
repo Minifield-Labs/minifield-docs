@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/Minifield-Labs/training",
+  "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+  "reviewed_on": "2026-10-02",
+  "files": [
+    {
+      "path": "contracts/training/v12.0.0/job.schema.json",
+      "source_path": "contracts/worker-computation/v12.0.0/job.schema.json",
+      "sha256": "e75b5245976664215f0191a5323666bdc1febec12b5216717ab77a79c21389ba"
+    },
+    {
+      "path": "contracts/training/v13.0.0/job.schema.json",
+      "source_path": "contracts/worker-computation/v13.0.0/job.schema.json",
+      "sha256": "be286a4187b123d1ecca8bb74ad6a5766a5cad99822ecad40ae2d5135c6e0c04"
+    }
+  ]
+}

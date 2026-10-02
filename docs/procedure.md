@@ -7,9 +7,20 @@
 3. Refresh the source path, revision, and SHA-256 in sources.json.
 4. Review all visible copy and links. Keep operational details useful to the reader. Keep internal engineering evidence here.
 
+## Refresh checked sources
+
+- MagicBox: update the exact public package version and lockfile together. Run `npm run check:examples`, review the generated API reference, and update the surrounding prose for changed behavior. The 4 TypeScript examples live in `examples/magicbox/`; edit those files directly.
+- Training: copy the owning repository's versioned job schemas into `contracts/training/`. Record the source revision, paths, and SHA-256 values in `contracts/training/manifest.json` and `docs/sources.json`. Preserve exact schema bytes. Normal builds verify the local snapshots and never access sibling repositories.
+- When introducing a schema version or reference section, update the selected definitions in `scripts/training-reference.mjs` and the example-to-definition mapping in `scripts/check-documentation.mjs`. Unsupported schema shapes require an explicit renderer update.
+- Keep checked examples in `examples/` and publish them through standalone `example` directives. Publish generated tables through `reference` directives. The checks require every registered table to appear in a page and compare each published example with its source file.
+
+JSON checks validate schema structure and field constraints. Training's Python validators also enforce cross-field rules. Review those rules when changing examples, such as routine evaluation budgets relative to fixed evaluation budgets.
+
 ## Validation
 
 Run `npm run check`. The static checker verifies page content, navigation, heading links, search entries, assets, the custom missing-page output, and absence of a client React bundle.
+
+`npm run check:examples` compiles all MagicBox example files with strict TypeScript settings and checks published source expansion, generated reference fields, schema pins, and Training JSON examples. It runs as part of `check` before the production build.
 
 Regression checks cover escaped titles, API names in code examples, cleared queries with pending failures, search retries, and contents tracking after fragment jumps and resizing. Browser enhancement checks execute the production bundle against a small DOM stub.
 

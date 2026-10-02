@@ -1,0 +1,12 @@
+{
+  "sequence_length": 8192,
+  "rows_per_microbatch": 1,
+  "gradient_accumulation_steps": 4,
+  "projection_chunk_size": 256,
+  "max_projection_chunks": 8,
+  "seed": 42,
+  "compute_dtype": "bfloat16",
+  "master_dtype": "float32",
+  "quantization_profile": "disabled-v1",
+  "schedule": "constant-v1"
+}

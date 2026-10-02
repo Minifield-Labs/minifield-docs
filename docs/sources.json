@@ -315,6 +315,29 @@
       "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
       "working_tree_modified": false,
       "sha256": "acb039485fde58115ad8f0097d2fb13ff8e58a5eb2495e2455831fd1a847fa05"
+    },
+    {
+      "repository": "training",
+      "path": "contracts/worker-computation/v12.0.0/job.schema.json",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "e75b5245976664215f0191a5323666bdc1febec12b5216717ab77a79c21389ba"
+    },
+    {
+      "repository": "training",
+      "path": "contracts/worker-computation/v13.0.0/job.schema.json",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "be286a4187b123d1ecca8bb74ad6a5766a5cad99822ecad40ae2d5135c6e0c04"
+    }
+  ],
+  "packages": [
+    {
+      "name": "@minifield-labs/magicbox",
+      "version": "0.1.0",
+      "resolved": "https://registry.npmjs.org/@minifield-labs/magicbox/-/magicbox-0.1.0.tgz",
+      "integrity": "sha512-c65jhknfwpuA2JUbd/KX4I66mqM5J4H0RL8h3Brn/WyyRz/5xz1jfg6q4ozjJRGPcRgR0CAII5CU600mowF6+A==",
+      "purpose": "Checked TypeScript examples and generated public API tables"
     }
   ]
 }

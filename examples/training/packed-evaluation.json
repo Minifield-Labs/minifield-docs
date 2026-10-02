@@ -1,0 +1,9 @@
+{
+  "every_steps": 100,
+  "samples": 20,
+  "max_new_tokens": 256,
+  "routine": {
+    "samples": 3,
+    "max_new_tokens": 128
+  }
+}

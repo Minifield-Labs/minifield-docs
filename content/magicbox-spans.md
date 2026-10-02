@@ -37,20 +37,7 @@ MagicBox validates the returned array, copies and freezes spans, and normalizes 
 
 JavaScript indexes strings in UTF-16 code units. An emoji can occupy 2 code units. Extractors that count Unicode code points can set `offsetUnit="codepoint"` so MagicBox converts their ranges.
 
-```typescript
-import { normalizeSpans } from '@minifield-labs/magicbox/spans';
-
-const source = 'Hi 👋 Robin';
-const spans = normalizeSpans(source, [{
-  id: 'person',
-  label: 'Person',
-  start: 5,
-  end: 10,
-}], 'codepoint');
-
-console.log(source.slice(spans[0].start, spans[0].end));
-// Robin
-```
+<!-- example: examples/magicbox/unicode-spans.ts -->
 
 ## Present overlapping fields
 

@@ -11,19 +11,11 @@ Evaluate on case families held out before wording expansion. Keep the action con
 
 Packed recipes separate routine decoding from final decoding. For example, this `evaluation` fragment evaluates every 100 updates, decodes 3 routine samples, and decodes 20 at the end:
 
-```json
-{
-  "every_steps": 100,
-  "samples": 20,
-  "max_new_tokens": 256,
-  "routine": {
-    "samples": 3,
-    "max_new_tokens": 128
-  }
-}
-```
+<!-- example: examples/training/packed-evaluation.json -->
 
 Routine sample and token budgets must fit within their final counterparts. A `samples` value of `0` runs objective evaluation with zero qualitative decodes.
+
+<!-- reference: training-evaluation -->
 
 ## Read each phase
 

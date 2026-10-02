@@ -29,33 +29,17 @@ The dense path uses `quantization_profile: "disabled-v1"` and `schedule: "consta
 
 Packed SFT trains complete action targets and updates every parameter leaf, including the tied embedding. It uses recipe computation `12.0.0` and the same dense numerical profile.
 
-These fields control physical training layout:
+The `training` object contains the physical layout and numerical settings:
 
-| Field | Meaning |
-| --- | --- |
-| `sequence_length` | Tokens per row; default `8192`, range `8`–`32768` |
-| `rows_per_microbatch` | Required positive row count |
-| `gradient_accumulation_steps` | Required positive microbatch count per optimizer update |
-| `projection_chunk_size` | Required positive number of target positions per projection chunk |
-| `max_projection_chunks` | Required positive number of projection chunks per microbatch |
-| `seed` | Shuffle seed; default `42` |
+<!-- reference: training-packed-sft -->
+
+Each row holds `sequence_length` tokens. `rows_per_microbatch` sets the row count, and `gradient_accumulation_steps` sets microbatches per optimizer update.
+
+`projection_chunk_size` × `max_projection_chunks` sets supervised target capacity per microbatch. `seed` controls the training shuffle.
 
 For example, this `training` fragment uses 1 row per microbatch, accumulates 4 microbatches per update, and allows 2,048 supervised target positions per microbatch:
 
-```json
-{
-  "sequence_length": 8192,
-  "rows_per_microbatch": 1,
-  "gradient_accumulation_steps": 4,
-  "projection_chunk_size": 256,
-  "max_projection_chunks": 8,
-  "seed": 42,
-  "compute_dtype": "bfloat16",
-  "master_dtype": "float32",
-  "quantization_profile": "disabled-v1",
-  "schedule": "constant-v1"
-}
-```
+<!-- example: examples/training/packed-sft-training.json -->
 
 Choose dimensions against your model, example lengths, and GPU memory. `generation.json` records the prepared packing plan; training events report its input and supervised token counts.
 
@@ -67,35 +51,25 @@ Eligible body weights participate in the forward pass as ternary matrices with g
 
 The objective combines supervised cross-entropy with distillation from the job’s dense starting weights. Its recipe settings are:
 
-| Field | Default |
-| --- | --- |
-| `distill_weight` | `1.0` |
-| `distill_temperature` | `2.0` |
-| `ce_weight` | `0.1` |
-| `scale_rule` | `null`, using the quantization profile’s rule; accepts `absmax` or `absmean` |
+<!-- reference: training-qat-objective -->
 
-A zero objective weight disables that term. These settings participate in the computation identity.
+A `null` scale rule uses the quantization profile’s rule. A zero objective weight disables that term. These settings participate in the computation identity.
 
 The exported body uses 2-bit packed ternary codes and FP16 scales in the `minifield.ternary.v1` format. Preserve the quantization settings with the export identity when comparing it in Runtime.
 
 ## Optimizer defaults
 
-The `optimizer` object uses AdamW:
+The `optimizer` object uses AdamW. An omitted optimizer uses these defaults:
 
-| Field | Default |
-| --- | --- |
-| `learning_rate` | `0.00001` |
-| `beta1` | `0.9` |
-| `beta2` | `0.95` |
-| `eps` | `0.00000001` |
-| `weight_decay` | `0.01` |
-| `clip` | `1.0` |
+<!-- reference: training-optimizer -->
 
 Training records gradient norm, update norm, loss, token counts, and elapsed step time. Use these alongside [held-out evaluation](/training-evaluation/) to judge a run.
 
 ## Limits and recovery
 
 Packed recipes checkpoint every `100` optimizer updates by default. Set `limits.checkpoint_every_steps` to choose the cadence and `limits.max_steps` to set an optional update cap.
+
+<!-- reference: training-limits -->
 
 The computation identity binds model and data references, serialization, packing, numerical settings, optimizer, schedule, and training seed. Resume using the same computation settings and a new attempt identity. A changed computation starts a new run.
 

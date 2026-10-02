@@ -19,41 +19,7 @@ npm install @minifield-labs/magicbox
 
 This complete example extracts an email address with a local pattern. You can run it immediately, then replace `extractEmail` with your model adapter.
 
-```tsx
-import { MagicBox } from '@minifield-labs/magicbox';
-import type { MagicBoxSpan } from '@minifield-labs/magicbox';
-import '@minifield-labs/magicbox/styles.css';
-
-const schema = {
-  type: 'object',
-  properties: {
-    email: { type: 'string', format: 'email' },
-  },
-} as const;
-
-async function extractEmail(text: string): Promise<MagicBoxSpan<string>[]> {
-  const match = /[\w.+-]+@[\w.-]+\.[a-z]{2,}/i.exec(text);
-  if (!match) return [];
-
-  return [{
-    id: 'email-1',
-    label: 'Email',
-    start: match.index,
-    end: match.index + match[0].length,
-    value: match[0],
-  }];
-}
-
-export default function ContactInput() {
-  return (
-    <MagicBox
-      schema={schema}
-      defaultValue="Send the invitation to robin@minifieldlabs.com."
-      onExtract={extractEmail}
-    />
-  );
-}
-```
+<!-- example: examples/magicbox/contact-input.tsx -->
 
 Choose **Extract** to review the detected field. The span’s `start` and `end` refer to the exact string passed into the callback.
 
