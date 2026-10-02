@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { Marked } from 'marked';
 import GithubSlugger from 'github-slugger';
 import { createHighlighter } from 'shiki';
+import githubDark from 'shiki/themes/github-dark.mjs';
 import { documentationReferences, expandDocumentation } from '../scripts/documentation.mjs';
 
 export type Doc = {
@@ -21,7 +22,14 @@ export type Doc = {
 export type SearchEntry = Pick<Doc, 'url' | 'title' | 'description' | 'group' | 'text'>;
 
 const highlighter = createHighlighter({
-  themes: ['github-dark'],
+  themes: [{
+    ...githubDark,
+    name: 'minifield-dark',
+    tokenColors: [...(githubDark.tokenColors ?? []), {
+      scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
+      settings: { foreground: '#8b949e' },
+    }],
+  }],
   langs: ['tsx', 'typescript', 'javascript', 'json', 'bash', 'yaml', 'rust', 'text'],
 });
 
@@ -40,6 +48,7 @@ export async function loadDocs(directory = join(process.cwd(), 'content')): Prom
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error(`${file}: invalid filename`);
     const headings: Doc['headings'] = [];
     const slugger = new GithubSlugger();
+    let codeBlocks = 0;
     const markdown = new Marked({
       renderer: {
         heading({ tokens, depth }) {
@@ -53,7 +62,17 @@ export async function loadDocs(directory = join(process.cwd(), 'content')): Prom
           const language = lang?.split(' ')[0] || 'text';
           const filename = lang?.match(/\bfilename="([^"]+)"/)?.[1];
           if (language !== 'text' && !highlight.getLoadedLanguages().includes(language)) throw new Error(`${file}: unsupported language ${language}`);
-          return `<div class="code-block"><div class="code-toolbar"><span>${escapeHtml(filename ?? language)}</span><button type="button" data-copy aria-label="${escapeHtml(filename ? `Copy ${filename}` : 'Copy code')}">Copy</button></div>${highlight.codeToHtml(text, { lang: language, theme: 'github-dark' })}</div>`;
+          const label = `Code example ${++codeBlocks}: ${filename ?? `${language} for ${headings.at(-1)?.text ?? data.title}`}`;
+          const html = highlight.codeToHtml(text, {
+            lang: language,
+            theme: 'minifield-dark',
+            transformers: [{ pre(node) {
+              node.properties.tabIndex = 0;
+              node.properties.role = 'region';
+              node.properties.ariaLabel = label;
+            } }],
+          });
+          return `<div class="code-block"><div class="code-toolbar"><span>${escapeHtml(filename ?? language)}</span><button type="button" data-copy hidden aria-label="${escapeHtml(filename ? `Copy ${filename}` : 'Copy code')}">Copy</button></div>${html}</div>`;
         },
       },
     });

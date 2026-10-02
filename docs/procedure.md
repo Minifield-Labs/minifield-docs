@@ -28,6 +28,12 @@ Serve the production output with `npm run preview`. Inspect Introduction and a c
 
 Check the site with reduced motion and without JavaScript. The article and navigation must remain usable. Inspect browser console and network failures.
 
+For accessibility changes, run an axe scan on every exported page and the 404 page. Include WCAG 2 A/AA, 2.1 A/AA, 2.2 AA, and best-practice rules. Check the open search dialog and mobile navigation separately. Review incomplete results manually.
+
+Use the keyboard to activate the skip link, open search, move through results, close the dialog, scroll code, and open mobile navigation. Check focus visibility and focus return. Inspect the accessibility tree for named landmarks and code regions. At 320 CSS pixels, articles must fit the viewport and code must scroll within its own region. Check enlarged text spacing, reduced motion, and forced colors. With JavaScript disabled, search and copy controls must stay hidden.
+
+The checks follow W3C guidance for [keyboard access](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html), [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html), and [target sizes](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html). Automated scans supplement keyboard and assistive-technology testing.
+
 ## Acceptance
 
 - Every published page renders substantive HTML before JavaScript executes.

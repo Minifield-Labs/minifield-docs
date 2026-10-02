@@ -48,7 +48,7 @@ export function renderPage(docs: Doc[], page?: Doc, development = false) {
           <button type="button" data-open-search hidden>Search</button>
         </div>
         <div className="docs-layout">
-          <aside className="sidebar">
+          <aside className="sidebar" aria-label="Documentation sidebar">
             <button className="search-trigger" type="button" data-open-search hidden><span>Search documentation</span><kbd data-shortcut>⌘ K</kbd></button>
             <Navigation docs={docs} current={page} />
             <a className="sidebar-home" href="https://minifieldlabs.com">Minifield Labs <span aria-hidden="true">↗</span></a>
@@ -64,7 +64,7 @@ export function renderPage(docs: Doc[], page?: Doc, development = false) {
               </nav>
             </> : <div className="prose"><p>The page you’re looking for has moved or doesn’t exist.</p><p><a href="/">Open the documentation →</a></p></div>}
           </main>
-          <aside className="contents">
+          <aside className="contents" aria-label="Page contents">
             {page && page.headings.length > 0 && <nav aria-label="On this page"><p>On this page</p>{page.headings.filter((heading) => heading.level <= 3).map((heading) =>
               <a key={heading.id} href={`#${heading.id}`} className={heading.level === 3 ? 'nested' : ''}>{heading.text}</a>
             )}</nav>}
@@ -73,7 +73,7 @@ export function renderPage(docs: Doc[], page?: Doc, development = false) {
         <footer className="site-footer"><a href="https://minifieldlabs.com">Intelligence at human scale.</a><span>Minifield Labs</span></footer>
       </div>
       <dialog className="search-dialog" aria-labelledby="search-title">
-        <div className="search-head"><h2 id="search-title">Search documentation</h2><button type="button" data-close-search aria-label="Close search">Esc</button></div>
+        <div className="search-head"><h2 id="search-title">Search documentation</h2><button type="button" data-close-search aria-label="Close search (Esc)">Esc</button></div>
         <label className="sr-only" htmlFor="docs-search">Search documentation</label>
         <input id="docs-search" type="search" placeholder="Search products, guides, and interfaces…" autoComplete="off" />
         <p className="search-status" role="status" aria-live="polite">Type to search the documentation.</p>

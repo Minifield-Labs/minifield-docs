@@ -87,21 +87,29 @@ dialog.addEventListener('keydown', (event) => {
 });
 
 document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => {
+  button.hidden = false;
+  const label = button.getAttribute('aria-label')!;
   button.addEventListener('click', async () => {
     const code = button.closest('.code-block')!.querySelector('code')!;
+    const copyStatus = document.querySelector('[data-copy-status]')!;
+    copyStatus.textContent = '';
     try {
       await navigator.clipboard.writeText(code.textContent ?? '');
       button.textContent = 'Copied';
-      document.querySelector('[data-copy-status]')!.textContent = 'Code copied to clipboard.';
+      copyStatus.textContent = 'Code copied to clipboard.';
     } catch {
       const range = document.createRange();
       range.selectNodeContents(code);
       window.getSelection()?.removeAllRanges();
       window.getSelection()?.addRange(range);
       button.textContent = 'Selected';
-      document.querySelector('[data-copy-status]')!.textContent = 'Code selected. Use your keyboard to copy.';
+      copyStatus.textContent = 'Code selected. Use your keyboard to copy.';
     }
-    window.setTimeout(() => { button.textContent = 'Copy'; }, 1800);
+    button.setAttribute('aria-label', `${button.textContent}. ${label}`);
+    window.setTimeout(() => {
+      button.textContent = 'Copy';
+      button.setAttribute('aria-label', label);
+    }, 1800);
   });
 });
 

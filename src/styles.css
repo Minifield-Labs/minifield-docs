@@ -66,6 +66,7 @@ main{min-width:0;padding:37px 42px 72px}
 .code-toolbar button{padding:6px 8px;background:transparent;border:0;border-radius:2px;font-size:10px;color:#c2c7c7}
 .code-toolbar button:hover{background:#242829;color:var(--foreground)}
 .prose pre{margin:0;padding:20px 18px;overflow-x:auto;background:#141617!important;line-height:1.8}
+.prose pre:focus-visible{outline-offset:-3px}
 .prose pre code{padding:0;background:transparent;border-radius:0;font-size:11px;line-height:1.8;display:block;min-width:max-content}
 .prose table{border-collapse:collapse;width:100%;margin:24px 0;font-size:12px;line-height:1.65}
 .prose th{color:#dce0df;text-align:left;font-weight:500;border-bottom:1px solid #42494a;padding:0 12px 12px 0}
@@ -93,7 +94,7 @@ main{min-width:0;padding:37px 42px 72px}
 .search-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
 .search-head h2{font:11px/1.7 var(--mono);color:#c7cdcc}
 .search-head button{font:10px var(--mono);padding:6px 8px;border:1px solid #414748;background:#1b1e1f;border-radius:3px;color:#bbc2c2}
-.search-dialog input{width:calc(100% - 40px);margin:20px 20px 6px;padding:11px 12px;border:1px solid #535b5c;border-radius:3px;background:#101112;font-size:14px;appearance:none}
+.search-dialog input{width:calc(100% - 40px);margin:20px 20px 6px;padding:11px 12px;border:1px solid #687172;border-radius:3px;background:#101112;font-size:14px;appearance:none}
 .search-dialog input::placeholder{color:#a5adae}
 .search-status{padding:10px 20px 16px;font-size:12px;color:var(--muted)}
 .search-results{padding:0 10px 10px}

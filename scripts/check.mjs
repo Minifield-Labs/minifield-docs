@@ -19,6 +19,16 @@ for (const doc of docs) {
   checkTitles(html, doc.title, doc.url);
   assert.ok(html.includes('<article class="prose">'), `${doc.url}: prerendered body`);
   assert.ok(html.includes('aria-current="page"'), `${doc.url}: current navigation`);
+  assert.ok(html.includes('<main id="main" tabindex="-1">'), `${doc.url}: focusable skip-link target`);
+  assert.ok(html.includes('aria-label="Documentation sidebar"') && html.includes('aria-label="Page contents"'), `${doc.url}: distinct sidebar landmarks`);
+  for (const [pre] of html.matchAll(/<pre\b[^>]*>/g)) {
+    assert.match(pre, /tabindex="0"/, `${doc.url}: keyboard-scrollable code`);
+    assert.match(pre, /role="region"/, `${doc.url}: semantic code region`);
+    assert.match(pre, /aria-label="[^"]+"/, `${doc.url}: named code region`);
+  }
+  for (const [button] of html.matchAll(/<button\b[^>]*data-copy[^>]*>/g)) {
+    assert.match(button, /hidden/, `${doc.url}: copy control hidden before enhancement`);
+  }
   assert.ok(!html.includes('—'), `${doc.url}: copy contains an em dash`);
   assert.ok(search.some((entry) => entry.url === doc.url && entry.text.length > 100), `${doc.url}: search coverage`);
   pages.set(doc.url, html);

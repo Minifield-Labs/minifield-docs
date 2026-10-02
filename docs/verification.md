@@ -67,3 +67,17 @@ Moved 4 MagicBox TypeScript examples and 2 Training JSON fragments into source f
 - The quickstart displayed its source filename and its copy button confirmed success. Searching for `rootProps` found the generated API reference. The browser reported no warnings or errors, and viewport overrides were cleared.
 - Independent review found no correctness or React structure defects. Authoring instructions and source provenance were updated. The saved production preview is ignored `.local/checked-reference.jpg`.
 - Final validation and handoff cleanup stayed within the workspace artifact limits. Cleanup found no removable intermediates; task storage was 8,026,341,376 bytes and free space was 27,588,501,504 bytes. This remains a local repository and preview; no remote or PR base branch exists.
+
+## Accessibility audit, October 2, 2026
+
+Fixed low-contrast syntax comments, unnamed complementary landmarks, search-field border contrast, and control names that omitted their visible text. Code regions now have unique descriptive names and an inset focus outline. Copy controls remain hidden until their behavior loads, and their accessible names follow the visible success and fallback states.
+
+- axe-core 4.13.0 reported 0 violations across all 19 pages and the 404 page at 1440 × 900, using WCAG 2 A/AA, 2.1 A/AA, 2.2 AA, and best-practice rules. The open search dialog and mobile navigation also reported 0 violations.
+- Baseline comments measured 3.76:1 contrast. The updated comment color measures 5.90:1 on the code background. The search input border measures 3.62:1 against its surroundings.
+- Remaining automated contrast review items were decorative, aria-hidden pagination arrows and clipped sidebar links on the short 404 page. The arrows share the passing link text color. Sidebar links share the verified navigation colors and remain reachable through sidebar scrolling.
+- Keyboard checks verified the skip link moves focus to main content, Cmd-K opens search, modal focus stays within the dialog, and Escape returns focus. The mobile menu opens with Enter, links to a nested page, and closes after navigation. Named code regions accept keyboard focus and horizontal arrow-key scrolling.
+- All 19 articles fit a 320px viewport. Enlarged line, word, letter, and paragraph spacing preserved the document width on the quickstart and checkpoint pages. Code overflow stayed inside its scroll region. Forced colors retained a visible focus outline, and reduced motion disabled transitions.
+- With JavaScript disabled, the quickstart article, code regions, and native mobile navigation remained usable. Search and copy controls stayed hidden. Browser overrides were restored after testing.
+- `npm run check` passed, including new regression checks for code-region names and focusability, distinct landmarks, no-JavaScript copy controls, and accessible copy feedback. The browser bundle is 3.53 KB before gzip (1.50 KB gzipped). Independent review found no actionable defects.
+- Raw before/after axe results are retained in ignored `.local/accessibility-before.json` and `.local/accessibility-after.json`. Tests used the Chromium accessibility tree and keyboard controls; a VoiceOver or NVDA reading session was not run.
+- The focused code preview is ignored `.local/accessibility.jpg`. Validation and final cleanup stayed within budget. Cleanup found no removable intermediates, with 8,028,672,000 bytes of task storage and 27,361,177,600 bytes free.
