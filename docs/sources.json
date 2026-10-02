@@ -329,6 +329,111 @@
       "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
       "working_tree_modified": false,
       "sha256": "be286a4187b123d1ecca8bb74ad6a5766a5cad99822ecad40ae2d5135c6e0c04"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/json_io.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "8a91e2ccfb1346d3822c3df8065f8019508cc2ae81e6d53fcdc0574fc9ad30e8"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/__init__.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "2e168bdda6ab5fd3a211928d4dd00e0902cc6aa4452633d5d27bd4adcf0250d0"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/inputs.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "c7bc37f20d1398299e8226036a84ea2afe05d50d0214508389c11fc7eac22887"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/datasets/README.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "d694cf065f05393f56397760d512df98736ffcdf236ec54af6284eda73e2cf03"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/sft/README.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "301cc695735de95c1daef5c1e7119a015ef77d1354bac5f205d11083e2828a66"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/sft/model_io.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "f0cdf112543b03fbded7029d0844e5143fadc7e3209db4e5c39f580f3a9dd025"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/sft/argument_trace.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "72114a881e200ca84263dc38e72f2e7fe35087feee1cd1f56f8b7e78767d53ac"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/sft/two_stage_batch.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "1b5510a0652e1f3cf7843d3b18bb63f5a9fb3b71c15e9ffa3928c66b237ea977"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/__init__.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "b321215403bfc06ed9759affcaa6cf8041f1aab2829376b1c06974caf05bd47e"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_two_stage/generate.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "92b55900cbae607b65c47bf84ade4bf95905f78825003eabfa388743d2caeaf7"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_two_stage/run.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "67234d75e55d4dbb9e03538512803a2536757c04eb1292f38aac4054fe9f498c"
+    },
+    {
+      "repository": "training",
+      "path": "tests/strategies/lfm2_two_stage/test_generate.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "80e943d66825f62d4bf7052b544e18f2e6846919ddbe81ca1ded2efcfd552f02"
+    },
+    {
+      "repository": "training",
+      "path": "tests/strategies/lfm2_packed_sft/test_packed_serializer.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "63d005da9256ee74e7ce3f052bd267c92c863a9b811f945842878df8339f971d"
+    },
+    {
+      "repository": "training",
+      "path": "tests/strategies/lfm2_packed_sft/test_packed_contracts.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "19c978bcc0e0f533a2d2829925214b64a4b69862f135ed95c9ccbd6c97f0b139"
+    },
+    {
+      "repository": "training",
+      "path": "tests/test_recipe_worker.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "d40adbf99b35bad55890b4a8480258e081c7b9e7714e4ceb5d117125a7fe216a"
     }
   ],
   "packages": [

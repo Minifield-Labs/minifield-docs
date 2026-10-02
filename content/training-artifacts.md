@@ -2,10 +2,10 @@
 title: Checkpoints and exports
 description: Recover training state, verify attempt artifacts, and package models for Runtime.
 group: Training
-order: 55
+order: 58
 ---
 
-Each attempt writes its recipe, ordered events, result, evaluation, and model artifacts under one output root. Keep this directory with the pinned inputs and installed worker revision.
+Each attempt writes its recipe, ordered events, result, evaluation, and model artifacts beneath `<output-root>/<job_id>/<attempt_id>/`. Keep this directory with the pinned inputs and installed worker revision.
 
 ## Attempt directory
 
@@ -33,6 +33,12 @@ A checkpoint saves FP32 master weights, Adam optimizer state, the committed opti
 The worker keeps the 2 newest completed checkpoints after a durable save. Periodic checkpoints stay local during supervised execution; on interruption, the supervisor uploads the latest valid recovery checkpoint.
 
 Resume from the checkpoint referenced by the new attempt’s recipe. Preserve the model, source, tokenizer, serializer, packing, optimizer, numerical settings, and schedule identities. The restored cursor continues from the last committed optimizer update.
+
+For direct worker execution, copy the complete checkpoint directory beneath the new input root. Keep its manifest and tensor files together. Set `resume.path` to the relative manifest path, such as `recovery/step-100/manifest.json`, and set `resume.sha256` to that manifest's SHA-256.
+
+Keep `job_id` and assign a new `attempt_id`. Validate the revised recipe, then run it with a fresh attempt directory. Packed recipes also bind limits and evaluation settings into the computation digest, so preserve those settings when resuming.
+
+Read the interrupted attempt's `result.checkpoint` first. A `null` value means that attempt has no registered recovery checkpoint. The supervisor stages published checkpoint archives before launching its worker; direct execution uses the extracted manifest and tensor directory.
 
 Checkpoint validation checks the saved identity and tensor inventory before restoring state. Preserve the interrupted attempt’s events and result alongside the resumed attempt.
 

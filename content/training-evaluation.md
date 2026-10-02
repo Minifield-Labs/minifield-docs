@@ -2,7 +2,7 @@
 title: Evaluation
 description: Measure held-out loss, decoded actions, rejection behavior, and training usage.
 group: Training
-order: 54
+order: 57
 ---
 
 Evaluate on case families held out before wording expansion. Keep the action contract and serialization identical to the training recipe, then compare the exact exported model in Runtime.
@@ -43,6 +43,12 @@ Qualitative evaluation greedily decodes an action object and its assistant end t
 | `qualitative_decoded_tokens` | Tokens generated during sampled evaluation |
 
 Failure categories distinguish `wrong_route`, `wrong_arguments`, `invalid_json`, `non_object`, `missing_fields`, `extra_fields`, `empty`, and `unterminated`. Inspect the individual `decodes` as well as the aggregate `categories`.
+
+Each decode records its expected and emitted route, expected and emitted kind, parsed `action`, raw `generated` text, `terminated` flag, and token count.
+
+Action success requires the exact expected route and argument object, plus the assistant end token. A correct JSON object that exhausts the token budget before emitting that end token is `unterminated`.
+
+The qualitative sample consists of the first configured number of holdout decisions, in their fixed order. Set `samples` to cover the full holdout when you need every decision decoded. With zero qualitative samples, `action_success_rate` is `null`, and objective loss still covers all supervised holdout tokens.
 
 Keep clarification, rejection, and permission outcomes distinct in the expected actions. Exact action matching then exposes which boundary the model crossed.
 

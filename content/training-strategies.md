@@ -2,7 +2,7 @@
 title: Strategies and settings
 description: Match the recipe schema to its training strategy and numerical settings.
 group: Training
-order: 53
+order: 55
 ---
 
 The worker dispatches on the recipe’s schema version and `model.implementation`. Keep both identifiers with the recipe and exported artifacts.
@@ -59,7 +59,7 @@ The exported body uses 2-bit packed ternary codes and FP16 scales in the `minifi
 
 ## Optimizer defaults
 
-The `optimizer` object uses AdamW. An omitted optimizer uses these defaults:
+The `training.optimizer` object uses AdamW. An omitted optimizer uses these defaults:
 
 <!-- reference: training-optimizer -->
 

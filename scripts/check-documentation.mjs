@@ -29,7 +29,7 @@ for (const file of (await readdir('content')).filter(file => file.endsWith('.md'
   }
   for (const [, name] of authored.matchAll(/^<!-- reference: (.+) -->$/gm)) usedReferences.add(name);
 }
-assert.equal(examples.size, 6, 'All 4 React/TypeScript and 2 JSON examples are published');
+assert.equal(examples.size, 7, 'All 4 React/TypeScript and 3 JSON examples are published');
 assert.deepEqual([...usedReferences].sort(), Object.keys(references).sort(), 'Every generated table is published');
 await assert.rejects(expandDocumentation('<!-- reference: missing -->', 'fixture.md', references), /unknown reference/);
 await assert.rejects(expandDocumentation('<!-- example: examples/../../package.json -->', 'fixture.md', references), /invalid example path/);
@@ -40,12 +40,13 @@ ajv.addSchema(schema);
 for (const [file, definition, invalid] of [
   ['packed-sft-training.json', 'PackedSftTraining', { rows_per_microbatch: 0 }],
   ['packed-evaluation.json', 'EvaluationV10', { every_steps: 0 }],
+  ['packed-sft-job.json', null, { schema_version: '13.0.0' }],
 ]) {
   const value = JSON.parse(await readFile(`examples/training/${file}`, 'utf8'));
-  const validate = ajv.getSchema(`${schema.$id}#/$defs/${definition}`);
-  assert.ok(validate, `${definition}: schema is available`);
+  const validate = ajv.getSchema(definition ? `${schema.$id}#/$defs/${definition}` : schema.$id);
+  assert.ok(validate, `${definition ?? 'job'}: schema is available`);
   assert.ok(validate(value), `${file}: ${ajv.errorsText(validate.errors)}`);
-  assert.equal(validate({ ...value, ...invalid }), false, `${file}: invalid numerical settings fail`);
+  assert.equal(validate({ ...value, ...invalid }), false, `${file}: invalid settings fail`);
   assert.equal(validate({ ...value, invented_field: true }), false, `${file}: unknown fields fail`);
 }
 console.log(`Checked ${examples.size} exact source examples, schema validation, and ${usedReferences.size} generated reference tables.`);

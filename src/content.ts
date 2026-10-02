@@ -30,7 +30,7 @@ const highlighter = createHighlighter({
       settings: { foreground: '#8b949e' },
     }],
   }],
-  langs: ['tsx', 'typescript', 'javascript', 'json', 'bash', 'yaml', 'rust', 'text'],
+  langs: ['tsx', 'typescript', 'javascript', 'json', 'bash', 'yaml', 'rust', 'python', 'text'],
 });
 
 // Authored repository Markdown is trusted input. Never accept remote content here.

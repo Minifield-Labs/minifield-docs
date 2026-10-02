@@ -31,7 +31,7 @@ Set `TRAINING_JOB` to your job JSON path. Validate its schema and strategy selec
 
 The response includes `valid`, `computation_digest`, and the selected `strategy`. Recipe validation checks the declared job; execution resolves and hashes its input files.
 
-The recipe declares job and attempt IDs, product identity, pinned model assets, source selections, training settings, limits, and evaluation settings. Use the [strategy reference](/training-strategies/) to match its schema to the chosen computation.
+The recipe declares job and attempt IDs, product identity, pinned model assets, source selections, training settings, limits, and evaluation settings. Start with the [complete recipe](/training-recipes/), then use the [strategy reference](/training-strategies/) to choose its settings.
 
 ## Run an attempt
 
@@ -44,15 +44,19 @@ Set `TRAINING_INPUTS` to the directory containing the referenced inputs, and `TR
   --output-root "$TRAINING_OUTPUTS"
 ```
 
-The worker verifies input identities, prepares examples, initializes or restores training state, then writes progress and artifacts into the output directory. See [the artifact layout](/training-artifacts/#attempt-directory) for the resulting files.
+The worker initializes its GPU, verifies input identities, prepares examples, and initializes or restores training state. It writes progress and artifacts to `<output-root>/<job_id>/<attempt_id>/`. See [the artifact layout](/training-artifacts/#attempt-directory) for the resulting files.
 
 | Exit code | Meaning |
 | --- | --- |
 | `0` | Validation or execution completed |
 | `2` | Attempt failed |
-| `3` | Attempt stopped with a resumable `cancelled` or `limited` result |
+| `3` | Attempt stopped with a `cancelled` or `limited` result |
 
 Use `result.json` for the attempt’s status and identities, and `events.jsonl` for its ordered progress history.
+
+Check `result.checkpoint` before resuming an interrupted attempt. It can be `null` when execution stopped before the first durable save. Each new execution needs a fresh `attempt_id`; keep the previous attempt directory for its events and artifacts.
+
+For packed SFT, a positive `limits.max_steps` caps the training pass, then runs final evaluation and export. That path returns `completed`. See [Troubleshooting](/training-troubleshooting/) for failures by phase, or use the [Python API](/training-python/) to validate and execute from a script.
 
 ## Connect a supervised worker
 

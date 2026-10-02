@@ -35,7 +35,7 @@ order: 24
 
 Use a unique integer order. Groups follow the first page’s order. Start body headings at H2. Navigation, previous/next links, page contents, and the full-text search index derive from the same source.
 
-Use root-relative internal links with trailing slashes, such as `/runtime-browser/`. Use fenced code with `tsx`, `typescript`, `javascript`, `json`, `bash`, `yaml`, `rust`, or `text`. Markdown is trusted repository source. Review raw HTML in content as application code.
+Use root-relative internal links with trailing slashes, such as `/runtime-browser/`. Use fenced code with `tsx`, `typescript`, `javascript`, `json`, `bash`, `yaml`, `rust`, `python`, or `text`. Markdown is trusted repository source. Review raw HTML in content as application code.
 
 ### Checked examples and generated references
 

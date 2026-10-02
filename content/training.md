@@ -29,6 +29,17 @@ The [strategy reference](/training-strategies/) lists recipe versions, optimizer
 
 Start with [installation and execution](/training-worker/). [Training data](/training-data/) explains the source contract and the tokens the model learns from.
 
+## Guides for each step
+
+| Task | Guide |
+| --- | --- |
+| Assemble a complete job with pinned model and input files | [Write a recipe](/training-recipes/) |
+| Follow decisions into model inputs, supervision, and physical rows | [Serialization and packing](/training-format/) |
+| Validate recipes and inspect installed strategies in Python | [Python API](/training-python/) |
+| Diagnose validation, CUDA, packing, or recovery failures | [Troubleshooting](/training-troubleshooting/) |
+
+For a first packed-SFT run, install the worker, stage your inputs, and fill in the complete recipe. Validate it before execution, then inspect the attempt's final evaluation and exported assets.
+
 ## Read the evidence
 
 The worker records training loss and update metrics as ordered events. Evaluation checks held-out objectives and decoded actions, with separate counts for false rejection and false acceptance.

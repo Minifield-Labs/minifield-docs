@@ -1,0 +1,95 @@
+{
+  "schema_version": "12.0.0",
+  "job_id": "task-priority-sft-001",
+  "attempt_id": "attempt-001",
+  "purpose": "training",
+  "product_id": "task-manager",
+  "model": {
+    "implementation": "lfm2-packed-sft-v1",
+    "repository": "example/lfm2-task-model",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "config": {
+      "path": "model/config.json",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "tokenizer": {
+      "path": "model/tokenizer.json",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+    },
+    "weights": {
+      "path": "model/model.safetensors",
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+    }
+  },
+  "data": {
+    "kind": "trajectories",
+    "selections": [
+      {
+        "id": "set-priority-train",
+        "family": "priority-update",
+        "split": "train",
+        "template": {
+          "path": "cases/train.yaml",
+          "sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+        },
+        "metadata": {
+          "path": "cases/train-metadata.json",
+          "sha256": "5555555555555555555555555555555555555555555555555555555555555555"
+        },
+        "seed": 42,
+        "start": 0,
+        "samples": 1000
+      },
+      {
+        "id": "set-priority-holdout",
+        "family": "priority-follow-up",
+        "split": "holdout",
+        "template": {
+          "path": "cases/holdout.yaml",
+          "sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+        },
+        "metadata": {
+          "path": "cases/holdout-metadata.json",
+          "sha256": "7777777777777777777777777777777777777777777777777777777777777777"
+        },
+        "seed": 43,
+        "start": 0,
+        "samples": 100
+      }
+    ]
+  },
+  "training": {
+    "sequence_length": 8192,
+    "rows_per_microbatch": 1,
+    "gradient_accumulation_steps": 4,
+    "projection_chunk_size": 256,
+    "max_projection_chunks": 8,
+    "seed": 42,
+    "optimizer": {
+      "learning_rate": 0.00001,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "eps": 0.00000001,
+      "weight_decay": 0.01,
+      "clip": 1.0
+    },
+    "compute_dtype": "bfloat16",
+    "master_dtype": "float32",
+    "quantization_profile": "disabled-v1",
+    "schedule": "constant-v1"
+  },
+  "limits": {
+    "max_steps": null,
+    "checkpoint_every_steps": 100
+  },
+  "evaluation": {
+    "every_steps": 100,
+    "samples": 20,
+    "max_new_tokens": 256,
+    "routine": {
+      "samples": 3,
+      "max_new_tokens": 128
+    }
+  },
+  "resume": null
+}
