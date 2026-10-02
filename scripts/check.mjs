@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
-import { loadDocs } from '../.build/render.js';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { loadDocs, renderPage } from '../.build/render.js';
+
+function checkTitles(html, title, url) {
+  assert.ok(html.includes(renderToStaticMarkup(createElement('h1', null, title))), `${url}: prerendered title`);
+  assert.ok(html.includes(renderToStaticMarkup(createElement('title', null, `${title} | Minifield Docs`))), `${url}: browser title`);
+}
 
 const docs = await loadDocs();
 const search = JSON.parse(await readFile('dist/search.json', 'utf8'));
@@ -9,13 +16,18 @@ assert.equal(search.length, docs.length);
 const pages = new Map();
 for (const doc of docs) {
   const html = await readFile(join('dist', doc.url, 'index.html'), 'utf8');
-  assert.ok(html.includes(`<h1>${doc.title}</h1>`), `${doc.url}: prerendered title`);
-  assert.ok(html.includes(`<title>${doc.title} | Minifield Docs</title>`), `${doc.url}: browser title`);
+  checkTitles(html, doc.title, doc.url);
   assert.ok(html.includes('<article class="prose">'), `${doc.url}: prerendered body`);
   assert.ok(html.includes('aria-current="page"'), `${doc.url}: current navigation`);
   assert.ok(!html.includes('—'), `${doc.url}: copy contains an em dash`);
   assert.ok(search.some((entry) => entry.url === doc.url && entry.text.length > 100), `${doc.url}: search coverage`);
   pages.set(doc.url, html);
+}
+
+const escapedTitle = { ...docs[0], title: 'React & TypeScript <T> "props" and \'state\'' };
+checkTitles(renderPage([escapedTitle], escapedTitle), escapedTitle.title, escapedTitle.url);
+for (const [url, term] of [['/magicbox-react/', 'MagicBoxExtractor'], ['/magicbox-spans/', 'normalizeSpans']]) {
+  assert.ok(search.find((entry) => entry.url === url)?.text.includes(term), `${url}: searchable API ${term}`);
 }
 
 let links = 0;

@@ -15,8 +15,8 @@ export default defineConfig({
     name: 'static-docs-development',
     configureServer(server) {
       server.watcher.add('content');
-      server.watcher.on('change', (path) => {
-        if (path.endsWith('.md')) server.ws.send({ type: 'full-reload' });
+      server.watcher.on('all', (event, path) => {
+        if (['add', 'change', 'unlink'].includes(event) && path.endsWith('.md')) server.ws.send({ type: 'full-reload' });
       });
       return () => {
         server.middlewares.use(async (req, res, next) => {

@@ -72,25 +72,27 @@ Use `onSelectionChange(span)` to respond to field selection. `renderValue(span, 
 ## Build a custom interface
 
 ```tsx
+import { useId } from 'react';
 import { useMagicBox } from '@minifield-labs/magicbox/headless';
 import type { MagicBoxExtractor } from '@minifield-labs/magicbox';
 
 export function PlainExtractor({ extract }: { extract: MagicBoxExtractor }) {
+  const sourceId = useId();
   const box = useMagicBox({ onExtract: extract });
 
   return (
     <section>
-      <label htmlFor="source">Source text</label>
+      <label htmlFor={sourceId}>Source text</label>
       <textarea
-        id="source"
+        id={sourceId}
         value={box.value}
         onChange={(event) => box.setValue(event.target.value)}
       />
-      <button disabled={!box.canExtract} onClick={() => void box.extract()}>
+      <button type="button" disabled={!box.canExtract} onClick={() => void box.extract()}>
         Extract
       </button>
       {box.status === 'extracting' && (
-        <button onClick={box.cancel}>Cancel</button>
+        <button type="button" onClick={box.cancel}>Cancel</button>
       )}
       {box.error && <p role="alert">{box.error.message}</p>}
       <ul>

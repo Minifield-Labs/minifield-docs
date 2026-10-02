@@ -57,7 +57,7 @@ export async function loadDocs(directory = join(process.cwd(), 'content')): Prom
       slug, url: slug === 'overview' ? '/' : `/${slug}/`, title: data.title,
       description: data.description, group: data.group, order: data.order,
       html: await markdown.parse(content),
-      text: content.replace(/```[\s\S]*?```/g, '').replace(/<[^>]+>/g, '').replace(/[[\]#*`]/g, ''),
+      text: content,
       headings,
     };
   }));

@@ -10,7 +10,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4330 --strictPort",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint src scripts vite.config.ts",
-    "check": "npm run typecheck && npm run lint && npm run build && node scripts/check.mjs"
+    "check": "npm run typecheck && npm run lint && npm run build && node scripts/check.mjs && node scripts/check-enhancements.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

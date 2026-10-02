@@ -29,3 +29,13 @@ The registered roots are `node_modules`, `dist`, `.build`, `.local`, and `/priva
 ## Git delivery
 
 The initial implementation uses feature branch `feat/initial-docs`, with the required Proto author and committer identity. This user-requested local repository has no GitHub remote. A pull request requires a remote and a base branch before publication.
+
+## React review fixes, October 2, 2026
+
+Applied the 4 initial review findings: explicit example button types, searchable code examples, escaped title checks, and a stale-query guard for failed searches. A second independent reviewer found 3 further improvements. The extractor example now uses unique React IDs, contents tracking follows heading positions, and development reloads include added and removed Markdown pages.
+
+- `npm run check` passed, including the new production-bundle regression checks. The export still contains 16 pages, the custom 404, and 815 verified local link/asset references.
+- The browser found `MagicBoxExtractor` and `normalizeSpans` in the correct pages. A deliberately paused search request was failed after clearing the input. The empty-query message remained correct, and the next search succeeded.
+- Contents links selected the correct section at 1440 × 900. Native fragment targets landed approximately 64px from the top. A 390 × 844 mobile check found no horizontal document overflow, and mobile search found the span API.
+- Temporary network interception and viewport overrides were removed. The search screenshot is retained in ignored `.local/review-search.jpg`.
+- The independent reviewer checked the final code changes and found no new defects. The checks and cleanup stayed within the workspace artifact limits.

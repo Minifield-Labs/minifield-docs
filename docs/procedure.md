@@ -11,6 +11,8 @@
 
 Run `npm run check`. The static checker verifies page content, navigation, heading links, search entries, assets, the custom missing-page output, and absence of a client React bundle.
 
+Regression checks cover escaped titles, API names in code examples, cleared queries with pending failures, search retries, and contents tracking after fragment jumps and resizing. Browser enhancement checks execute the production bundle against a small DOM stub.
+
 Serve the production output with `npm run preview`. Inspect Introduction and a code-heavy page at desktop and mobile widths. Check search by text and by Cmd-K/Ctrl-K. Check arrow-key result navigation, Escape, focus return, code copying, mobile navigation, and a direct nested-page load.
 
 Check the site with reduced motion and without JavaScript. The article and navigation must remain usable. Inspect browser console and network failures.

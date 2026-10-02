@@ -18,7 +18,7 @@ npm run check
 npm run preview
 ```
 
-`check` runs TypeScript, lint, the production build, and static link/asset checks. Preview serves the generated site on port 4330. Stop the dev server before starting preview.
+`check` runs TypeScript, lint, the production build, static link/asset checks, and search/contents regression checks. Preview serves the generated site on port 4330. Stop the dev server before starting preview.
 
 ## Author pages
 

@@ -41,6 +41,7 @@ async function search() {
     status.textContent = matches.length ? `${matches.length} ${matches.length === 1 ? 'result' : 'results'}.` : `No results for “${input.value.trim()}”. Try a product name or another term.`;
   } catch {
     index = undefined;
+    if (input.value.trim().toLocaleLowerCase() !== query) return;
     status.textContent = 'Search couldn’t load. Try again or browse the documentation.';
   }
 }
@@ -106,19 +107,15 @@ document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => 
 
 const headings = [...document.querySelectorAll<HTMLElement>('.prose h2, .prose h3')];
 const tocLinks = [...document.querySelectorAll<HTMLAnchorElement>('.contents a')];
-if ('IntersectionObserver' in window) {
-  const visible = new Set<string>();
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) visible.add(entry.target.id);
-      else visible.delete(entry.target.id);
-    }
-    const active = headings.find((heading) => visible.has(heading.id));
-    if (!active) return;
-    for (const link of tocLinks) {
-      if (link.hash === `#${active.id}`) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    }
-  }, { rootMargin: '-10% 0px -65% 0px' });
-  headings.forEach((heading) => observer.observe(heading));
+function updateContents() {
+  // Heading links land 64px from the top after scroll padding and margin.
+  const active = headings.filter((heading) => heading.getBoundingClientRect().top <= 80).at(-1) ?? headings[0];
+  if (!active) return;
+  for (const link of tocLinks) {
+    if (decodeURIComponent(link.hash.slice(1)) === active.id) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
 }
+window.addEventListener('scroll', updateContents, { passive: true });
+window.addEventListener('resize', updateContents);
+updateContents();
