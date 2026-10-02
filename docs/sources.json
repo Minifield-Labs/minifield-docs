@@ -1,0 +1,173 @@
+{
+  "reviewed_on": "2026-10-01",
+  "sources": [
+    {
+      "repository": "landing-page",
+      "path": "app/navigation.css",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": false,
+      "sha256": "1ae89be0410ea9b39a016a1d73e525577ed24553bb0fa88d979daeccdded8cf0"
+    },
+    {
+      "repository": "landing-page",
+      "path": "app/blog/blog.css",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": true,
+      "sha256": "1585d07d80797735b1b34474060ad360650b088a449882774545e289081e0449"
+    },
+    {
+      "repository": "landing-page",
+      "path": "app/globals.css",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": false,
+      "sha256": "6ec2c66bec9d2c93e1692c77a6509595fb6731a36478618118acc55a7079d2d7"
+    },
+    {
+      "repository": "landing-page",
+      "path": "app/instrumentation.css",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": false,
+      "sha256": "8cd5e9887ceba04f688f8ecb0ec9f5de8c251a7889d29d5e0b56de972d058e70"
+    },
+    {
+      "repository": "landing-page",
+      "path": "components/landing/site-header.tsx",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": false,
+      "sha256": "376233b09eb82f5d95e00cb04aecee1c25bc476f38e82605c3c44be682b89c9b"
+    },
+    {
+      "repository": "landing-page",
+      "path": "public/favicon.svg",
+      "revision": "2c640c6565b6fc6d1a53d3553f9821c29df8b094",
+      "working_tree_modified": false,
+      "sha256": "ac40c896e792612228e13d671ef186b5533cfb29990d46d58ad802e6554a92ec"
+    },
+    {
+      "repository": "minifield-magicbox",
+      "path": "README.md",
+      "revision": "69ddf55a0274941c92a5ceb2e9737e24a9e81e7f",
+      "working_tree_modified": false,
+      "sha256": "0f2cf74ebeba9415459d885c549f5b41f236ba4369380021c084949e8669a07e"
+    },
+    {
+      "repository": "minifield-magicbox",
+      "path": "src/types.ts",
+      "revision": "69ddf55a0274941c92a5ceb2e9737e24a9e81e7f",
+      "working_tree_modified": false,
+      "sha256": "63272f3b2533dfbd4f895cc1b35a32237ba66ca27eadd860ad0cc684136b1bfc"
+    },
+    {
+      "repository": "minifield-magicbox",
+      "path": "src/index.ts",
+      "revision": "69ddf55a0274941c92a5ceb2e9737e24a9e81e7f",
+      "working_tree_modified": false,
+      "sha256": "59be318060f76e6424409e46a5708d036ab2c9261eaad8d6990ec51cbfe0082a"
+    },
+    {
+      "repository": "minifield-magicbox",
+      "path": "src/spans.ts",
+      "revision": "69ddf55a0274941c92a5ceb2e9737e24a9e81e7f",
+      "working_tree_modified": false,
+      "sha256": "a58ce26ac6711b224337e393d2f10ddde485cc35f744155df1133458f439afe1"
+    },
+    {
+      "repository": "minifield-magicbox",
+      "path": "src/use-magicbox.ts",
+      "revision": "69ddf55a0274941c92a5ceb2e9737e24a9e81e7f",
+      "working_tree_modified": false,
+      "sha256": "f4d6b4c6164148187b1a61df14bdc050513393bace7f08521ce79f87acaa3972"
+    },
+    {
+      "repository": "runtime",
+      "path": "README.md",
+      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "working_tree_modified": false,
+      "sha256": "0862e0e45785fdfad31507e04ee3625a1b973f9973ae9e9ab1c436b04a59fce6"
+    },
+    {
+      "repository": "runtime",
+      "path": "web/README.md",
+      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "working_tree_modified": false,
+      "sha256": "dbf5daff89a1adc9e48137738863f9a033c3c114e92786eb7c5fff4908b33e89"
+    },
+    {
+      "repository": "runtime",
+      "path": "docs/runtime-telemetry.md",
+      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "working_tree_modified": false,
+      "sha256": "d3f989d01a007824091cf4e2ed41d27f61518067e8a26fbbb85a4f4469d7bb2f"
+    },
+    {
+      "repository": "runtime",
+      "path": "contracts/model-bundle/v0.1.0/README.md",
+      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "working_tree_modified": false,
+      "sha256": "3182475a63babde58eece34b9d08f0e136e1942fe85b18a278330c19db7b9cc7"
+    },
+    {
+      "repository": "minifield-client-library",
+      "path": "README.md",
+      "revision": "7b43414016b92b512e08dfa2883a2b3340aa5eea",
+      "working_tree_modified": false,
+      "sha256": "4f50d9478058ad73616c94977aed3546b1306aef06e3f8008acd95eef97ee8df"
+    },
+    {
+      "repository": "minifield-client-library",
+      "path": "src/types.ts",
+      "revision": "7b43414016b92b512e08dfa2883a2b3340aa5eea",
+      "working_tree_modified": false,
+      "sha256": "7ea5b78db21abd60ee4fde27b89de3db06ead1a2bc7396608f931b6f2437c674"
+    },
+    {
+      "repository": "minifield-observer",
+      "path": "README.md",
+      "revision": "897d0a5882a67d8a656778c4075c0640027bc737",
+      "working_tree_modified": false,
+      "sha256": "b75ae547c9bfab53e2960ac4f9fa19f79796b396511345adfb36c2114fbe3abc"
+    },
+    {
+      "repository": "data-generation",
+      "path": "README.md",
+      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
+      "working_tree_modified": false,
+      "sha256": "5fb88d82351afc35afad1f425b4d4e4d39eda27df8fb73fe84c4ee2356d67284"
+    },
+    {
+      "repository": "data-generation",
+      "path": "examples/catalog.yaml",
+      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
+      "working_tree_modified": false,
+      "sha256": "c04111f08b2d92fdb2b65051a469ab5a1dd0058e1f2201e69fc84dbd3acb587c"
+    },
+    {
+      "repository": "data-generation",
+      "path": "examples/resize.yaml",
+      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
+      "working_tree_modified": false,
+      "sha256": "cdc67b6f176ceff95c1c89f32418dc8ea1ae177e6c96700b7ec6b13f429e5e5e"
+    },
+    {
+      "repository": "training",
+      "path": "README.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "3e5994b00b401d02af6ef5c21eeb0c87fc83190d6eeb0b78c040603edf343d9f"
+    },
+    {
+      "repository": "backend",
+      "path": "README.md",
+      "revision": "55b162573e8c70955c486b742ec1c437b6201aa4",
+      "working_tree_modified": false,
+      "sha256": "7e646bbc89b9c4925e8f8566f16e6b10ccf4e843f291b989ba8f678d7400aae6"
+    },
+    {
+      "repository": "platform",
+      "path": "README.md",
+      "revision": "8c00fad513e1146c4e2e2f1fcf2f60658599935b",
+      "working_tree_modified": false,
+      "sha256": "124efd7a96f86715a4583c670e40257a5e2dee7aa6d4211bf8689e83f8b48b40"
+    }
+  ]
+}
