@@ -4,7 +4,7 @@ export { loadDocs, searchEntries } from './content';
 
 function Navigation({ docs, current }: { docs: Doc[]; current?: Doc }) {
   return <nav aria-label="Documentation">{[...new Set(docs.map((doc) => doc.group))].map((group) =>
-    <div className="nav-group" key={group}><p>{group}</p>{docs.filter((doc) => doc.group === group).map((doc) =>
+    <div className="nav-group" key={group}><h2>{group}</h2>{docs.filter((doc) => doc.group === group).map((doc) =>
       <a key={doc.slug} href={doc.url} aria-current={doc === current ? 'page' : undefined}>{doc.title}</a>
     )}</div>
   )}</nav>;
@@ -40,7 +40,6 @@ export function renderPage(docs: Doc[], page?: Doc, development = false) {
           <a className="docs-label" href="/">Docs</a>
           <nav className="main-nav" aria-label="Main navigation">
             <a href="https://minifieldlabs.com/blog">Blog</a>
-            <a href="https://minifieldlabs.com/stats">Stats</a>
             <a className="app-link" href="https://app.minifieldlabs.com">App <span aria-hidden="true">↗</span></a>
           </nav>
         </header>

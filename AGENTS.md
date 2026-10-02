@@ -5,6 +5,7 @@ Read README.md and docs/procedure.md before changing this repository.
 - This independent repository owns Minifield’s public documentation, its React static renderer, and static delivery configuration.
 - Write pages in content/*.md. Page filenames define URLs. Keep existing URLs stable. Navigation, search, and headings derive from this content.
 - Keep product facts grounded in the owning repositories. Record reviewed source paths, revisions, and hashes in docs/sources.json when refreshing technical content.
+- Public scope covers MagicBox, Runtime, Command, Observer, and Training. Keep internal application and backend guides in their owning repositories. Data preparation belongs in Training; data generation isn't a separately offered package. The company has no public Stats page.
 - Preserve the homepage and blog’s graphite #101112 surface, warm-white #efeeeb text, ember #f09169 interaction accent, Manrope Variable, IBM Plex Mono, text-only wordmark, and Fieldlines favicon geometry.
 - Keep technical prose concise. Use contractions. Never use em dashes or a sentence that negates a framing and immediately substitutes another.
 - Don't add defensive notes, disclaimers, marketing claims, fake measurements, decorative labels, or screenshots to the site without the user’s request.

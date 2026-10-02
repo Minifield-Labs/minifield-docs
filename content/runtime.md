@@ -1,11 +1,11 @@
 ---
 title: Runtime
-description: Local LFM2 inference in Rust, on CPU and WebGPU.
+description: Local LFM2 inference in Rust, on CPU, WebGPU, and native Metal.
 group: Runtime
 order: 20
 ---
 
-Minifield Runtime loads model assets, tokenizes inputs, and runs generation or classification. CPU and WebGPU backends implement the same finite inference contract.
+Minifield Runtime loads model assets, tokenizes inputs, and runs generation or classification. CPU, WebGPU, and native Metal backends implement the same finite inference contract.
 
 ## Run a native bundle
 
@@ -36,9 +36,9 @@ Reusable prefix state avoids repeating eligible shared-context work. The host co
 
 ## Load supported representations
 
-The loader validates the supported LFM2 configuration subset. Dense F32 and BF16 assets execute as F32. Packed `minifield.ternary.v1` and `minifield.nf4.v1` matrices use group-128 scales.
+The loader validates the supported LFM2 configuration subset. Dense F32, BF16, and F16 assets execute as F32. Packed `minifield.ternary.v1`, `minifield.nf4.v1`, and signed `minifield.int8.v1` matrices use group-128 scales.
 
-Model files describe weight representation. Runtime dispatch selects compatible kernels using the backend, tensor shape, and explicit memory policy.
+Model files describe weight representation, including mixed formats across weight roles. Runtime dispatch selects compatible kernels using the backend, tensor shape, and explicit memory policy.
 
 ## Check the integration
 

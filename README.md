@@ -1,6 +1,6 @@
 # Minifield Docs
 
-Static React documentation for MagicBox, Runtime, Command, Observer, data generation, training, and the Minifield platform. Styled to match the company homepage and blog.
+Static React documentation for MagicBox, Runtime, Command, Observer, and Training. Styled to match the company homepage and blog.
 
 ## Develop
 

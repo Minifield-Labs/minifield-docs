@@ -35,7 +35,9 @@ Keep private expected results, judge rules, and training lineage outside model-v
 
 The pinned `model-bundle` contract records product identity, base-model revision, training and dataset identity, engine requirements, context limits, decoding settings, and asset hashes.
 
-Its required asset roles are weights, tokenizer, chat template, and product contract. Training owns the export manifest; runtime consumers validate the pinned schema and exact asset bytes.
+Its required asset roles are weights, tokenizer, chat template, and product contract. Runtime consumers validate the pinned schema and exact asset bytes.
+
+The training worker also writes an [export manifest and prompt serializer](/training-artifacts/#model-export). Preserve those files with the training result. Package the flat training export into the raw bundle layout above and record the release metadata required by your consumer.
 
 ## Validate the delivered bundle
 

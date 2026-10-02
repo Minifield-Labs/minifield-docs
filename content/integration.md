@@ -14,7 +14,6 @@ Build around the feature’s input and result. Your application owns the user’
 | Extract fields | MagicBox `onExtract` | Supply extraction and consume spans |
 | Review an action | Command `onRequest` and `onExecute` | Resolve proposals and execute an approved action |
 | Run a model | Runtime browser bindings or native CLI | Load assets, supply prompts, and consume output |
-| Prepare examples | Data-generation `Generator` | Author cases and persist records |
 
 Keep the adapter that translates model output into product data in your application. That gives the UI a small interface and keeps model configuration in one place.
 
@@ -34,10 +33,10 @@ For a Command integration, show the selected proposal for approval and route exe
 
 Use the same action names, parameter types, and scope rules in authored cases, model evaluation, and application integration.
 
-Include valid requests, unsupported requests, clarification cases, and permission failures. Track task success and false rejection separately. Test the exact exported bundle on the devices you intend to support.
+Include valid requests, unsupported requests, clarification cases, and permission failures. [Prepare training data](/training-data/) with separate case families for training and holdout, then [evaluate](/training-evaluation/) task success and false rejection.
 
 ## Exchange versioned artifacts
 
-Each Minifield repository builds independently. Connect installed packages, immutable model assets, and versioned HTTP or worker protocols.
+Keep the model’s weights, tokenizer, prompt serializer, and action contract together. Record their checksums and the exact training recipe used to produce them.
 
-The backend owns durable job state and artifact records. Training consumes job assignments and publishes results. Runtime loads delivered assets. The application presents progress and releases through the backend’s interface.
+The [training export guide](/training-artifacts/) describes these artifacts. Package the exported weights and tokenizer in the [runtime asset layout](/runtime-assets/), then test that exact bundle on the devices you intend to support.

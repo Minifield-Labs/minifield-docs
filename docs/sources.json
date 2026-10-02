@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-01",
+  "reviewed_on": "2026-10-02",
   "sources": [
     {
       "repository": "landing-page",
@@ -81,9 +81,9 @@
     {
       "repository": "runtime",
       "path": "README.md",
-      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "revision": "3322d2208d5cebbfb0251728d00035c1dbedfc60",
       "working_tree_modified": false,
-      "sha256": "0862e0e45785fdfad31507e04ee3625a1b973f9973ae9e9ab1c436b04a59fce6"
+      "sha256": "a013e8a7cfc9439ed260f94726040909b9f7654295f5944ed213191c02e94328"
     },
     {
       "repository": "runtime",
@@ -95,9 +95,9 @@
     {
       "repository": "runtime",
       "path": "docs/runtime-telemetry.md",
-      "revision": "e74ec20243405fae91e053198e2f23af8783dd05",
+      "revision": "3322d2208d5cebbfb0251728d00035c1dbedfc60",
       "working_tree_modified": false,
-      "sha256": "d3f989d01a007824091cf4e2ed41d27f61518067e8a26fbbb85a4f4469d7bb2f"
+      "sha256": "4cfd865756a72a2aa2cf72b71b5ce32b64752b5ee9be48555a5edd155ba1221b"
     },
     {
       "repository": "runtime",
@@ -128,27 +128,6 @@
       "sha256": "b75ae547c9bfab53e2960ac4f9fa19f79796b396511345adfb36c2114fbe3abc"
     },
     {
-      "repository": "data-generation",
-      "path": "README.md",
-      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
-      "working_tree_modified": false,
-      "sha256": "5fb88d82351afc35afad1f425b4d4e4d39eda27df8fb73fe84c4ee2356d67284"
-    },
-    {
-      "repository": "data-generation",
-      "path": "examples/catalog.yaml",
-      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
-      "working_tree_modified": false,
-      "sha256": "c04111f08b2d92fdb2b65051a469ab5a1dd0058e1f2201e69fc84dbd3acb587c"
-    },
-    {
-      "repository": "data-generation",
-      "path": "examples/resize.yaml",
-      "revision": "ddc4fe9ae505008534bf8e7bc2c4483b1bfa33f9",
-      "working_tree_modified": false,
-      "sha256": "cdc67b6f176ceff95c1c89f32418dc8ea1ae177e6c96700b7ec6b13f429e5e5e"
-    },
-    {
       "repository": "training",
       "path": "README.md",
       "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
@@ -156,18 +135,186 @@
       "sha256": "3e5994b00b401d02af6ef5c21eeb0c87fc83190d6eeb0b78c040603edf343d9f"
     },
     {
-      "repository": "backend",
-      "path": "README.md",
-      "revision": "55b162573e8c70955c486b742ec1c437b6201aa4",
+      "repository": "training",
+      "path": "pyproject.toml",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
       "working_tree_modified": false,
-      "sha256": "7e646bbc89b9c4925e8f8566f16e6b10ccf4e843f291b989ba8f678d7400aae6"
+      "sha256": "de5d69301776da22900d6f666d5902fcf24f29c42f0a99df88786b5d7d64ad49"
     },
     {
-      "repository": "platform",
-      "path": "README.md",
-      "revision": "8c00fad513e1146c4e2e2f1fcf2f60658599935b",
+      "repository": "training",
+      "path": "docs/lfm2-generation.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
       "working_tree_modified": false,
-      "sha256": "124efd7a96f86715a4583c670e40257a5e2dee7aa6d4211bf8689e83f8b48b40"
+      "sha256": "eb4879cb270c4dfb0d4511087dd6cef58c4659017722975a761966178869f6bb"
+    },
+    {
+      "repository": "training",
+      "path": "docs/worker-deployment.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "81b208a3d355ae79444082691cd0dc49a9cdd8fbf29c9781cbc12536057f167c"
+    },
+    {
+      "repository": "training",
+      "path": "docs/supervisor.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "6ebebc9364628fcbaf06df750dac6eb73effd246755efbe914ed0d3f730e6c4c"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/registry.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "0bf4bd318cecbb3f757683d04f19336270c8a3179577f8a28a0da167403bdcf7"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/README.md",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "480adc3bdfda042979a0ddc3d277e5f7ae55604e70364ccd11248b046236305e"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/cli.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "918207dc3293d1bb2e8a7850bfc50d9b7f45cd31a6ef76ff63789d73ab82e56f"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/recipe.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "22b615776cbc4a0e3e00cb19d83b233840f5faf2cd6cd0f76cfcc9a80b3f03e4"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/spec.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "d9a0e484a29dc308e9ff5228dc2a6e1fbe238dbf57f9dcde1249d917ed57f280"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/verify.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "482f48121ff7059d52e5e8483f868b25d8ed1dfa0c87ca21a3009445d2f8285e"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/usage.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "c19be20f6dfcd8f6286fa6bbd5c4fedb012053e9bf5ffb68262dda6874bc6468"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/lifecycle.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "6715cd9327a52e9317efc96c7061e321b99e7ad89023c4cb4706459d86cd96bd"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/supervisor/cli.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "f61925f3c41fcb719502ab12486b6ce8f5bf9d9037c5d26b6eba788e98df415b"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/supervisor/service.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "888423caf735f34da39038d6c5b87cdf9aae8d41e51e426514de2308c02f12b2"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/supervisor/protocol.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "0e21e4f1c1c5958abd0f7110e4944db3605fc7b9acf2c59799b7a8d6dd2a892d"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/supervisor/connection.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "b41bef9194665691fc021947257d2ca89f5c26ae99ae7c73bdfdaec0f51d61a1"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_two_stage/config.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "2b734da2f8fa44b4705fce507a584fc0e168e504766d0a96329c9217d8cfc456"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_two_stage/evaluate.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "f4a21cebe5dd5db9fd12d65a270e8c83e575d8dbdc4f2b687a19f3d77d73d1bc"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/config.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "a681d2616c132abe7efdb179e4a6b4cda4aa8e825a24b8d1653f1f561fb74825"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/serializer.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "21291f8e5af7605c439690b2b6be3efc02b49f7785523fce567bb62f982296c4"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/packing.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "f1733de164dec74eb0bf861ccdc9bd7b6afa7f449a45cfa9976bf55b154623a3"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/run.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "241bb9cc86f01c18a712fd5455b6f77c6b09bea94eb08790dd51d23c20b557f8"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/evaluate.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "ea2cbe668df7da9b7a3412b4903474f9bcd56bf659d76a5128674d266093224a"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_sft/export.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "338a651ac23f9bb0e684ad9cfbc279a0c679172bec18c90b84da284733d79056"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/strategies/lfm2_packed_qat.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "30228709fe2239697bf5fa55f81f656eb44f0153d6100fac8a7ab405db89d49d"
+    },
+    {
+      "repository": "training",
+      "path": "src/minifield_training/execution/retention.py",
+      "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
+      "working_tree_modified": false,
+      "sha256": "acb039485fde58115ad8f0097d2fb13ff8e58a5eb2495e2455831fd1a847fa05"
     }
   ]
 }

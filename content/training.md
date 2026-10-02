@@ -1,46 +1,44 @@
 ---
 title: Training
-description: Train and evaluate a model for the work your product supports.
-group: Models and data
-order: 51
+description: Train, evaluate, and export a model for your product’s supported actions.
+group: Training
+order: 50
 ---
 
-Minifield Training is the Python/JAX worker for immutable training jobs. It consumes authored inputs and versioned assignments, runs training, and publishes evaluation results and model assets.
+Minifield Training is the Python/JAX package for reproducible model training. It prepares authored cases, trains LFM2 weights on CUDA GPUs, evaluates held-out decisions, and exports model assets with their checksums and prompt format.
 
-## Define the feature
+A job fixes the model revision, input files, strategy, numerical settings, and evaluation plan. Each execution attempt records progress, checkpoints, usage, and results against that identity.
 
-Write the product’s supported actions, vocabulary, parameter schemas, and scope rules. Prepare valid requests alongside similar unsupported requests.
+## Choose a training path
 
-Keep clarification, scope rejection, and permission failure as separate outcomes. Measure false rejection alongside task success.
+| Strategy | Training behavior |
+| --- | --- |
+| Two-stage full-weight | Learns action selection and argument generation with separate supervision |
+| Packed SFT | Trains complete action JSON targets, packing multiple examples into each sequence |
+| Packed QAT | Trains with ternary body weights and exports packed ternary matrices |
 
-## Prepare reproducible inputs
+The [strategy reference](/training-strategies/) lists recipe versions, optimizer settings, and packing controls. Packed SFT trains all parameter leaves, including the tied embedding. Two-stage training and packed QAT keep the tied embedding frozen.
 
-Retain authored YAML, saved wording, metadata, and checksums. Split case families before expansion and keep their related requests together.
+## Build a run
 
-The worker resolves immutable input references through its assigned protocol. Use the assignment’s declared computation and strategy to select the installed training path.
+1. **Define the feature.** Write its action names, parameter schemas, vocabulary, and scope rules. Include valid requests alongside similar unsupported requests.
+2. **Prepare the inputs.** Save authored trajectories and metadata. Split case families into training and holdout before expanding their wording variants.
+3. **Choose the recipe.** Pin the model revision and input checksums. Select a strategy, physical batch settings, checkpoint cadence, and evaluation plan.
+4. **Run the worker.** Validate the recipe, then execute it with separate input and output directories, or use a supervisor to consume assigned jobs.
+5. **Review and export.** Inspect held-out results, verify artifacts, and qualify the exported model with Runtime on the target device.
 
-## Install the worker
+Start with [installation and execution](/training-worker/). [Training data](/training-data/) explains the source contract and the tokens the model learns from.
 
-Use Python `3.12` and the repository-pinned uv `0.11.30` in the training checkout.
+## Read the evidence
 
-```bash
-uv sync --locked
-uv run --no-sync python scripts/check_quality.py
-uv build --no-sources
-```
+The worker records training loss and update metrics as ordered events. Evaluation checks held-out objectives and decoded actions, with separate counts for false rejection and false acceptance.
 
-Numerical execution uses a CUDA JAX backend. The supervisor manages GPU slots, authenticated downloads, child processes, cancellation, and durable event delivery.
+Use [evaluation](/training-evaluation/) to configure cadence and interpret results. [Checkpoints and exports](/training-artifacts/) covers recovery, manifests, and the files to deliver to Runtime.
 
-## Track a run
+## Package and ownership
 
-The backend owns canonical job state and artifact records. A worker claims an assignment, resolves inputs, reports progress, and uploads verified results.
+The package is `minifield-training`, with `minifield-worker` for execution and `minifield-supervisor` for queue operation. Python prepares training decisions directly from the job’s immutable source files.
 
-Checkpoint identity and export identity are checked before publication. Preserve immutable source references and the worker’s exact installed revision with each run.
+Your application defines the supported action contract and enforces permissions when an action executes. Training learns that contract; Runtime performs inference using the exported model and the host’s prompt policy.
 
-## Evaluate and export
-
-Evaluate task completion, schema correctness, rejection behavior, and model output against held-out cases. Compare the exported model on the runtime and target device.
-
-Training owns the model bundle and its checksummed manifest. Runtime owns execution compatibility and device evidence. Product release requires the measured evidence for the delivered assets.
-
-Read the [worker deployment guide](https://github.com/Minifield-Labs/training/blob/main/docs/worker-deployment.md) and [supervisor operation](https://github.com/Minifield-Labs/training/blob/main/docs/supervisor.md) for installation and assignment details.
+The [training repository](https://github.com/Minifield-Labs/training) contains the package, locked dependencies, strategy implementations, and worker protocol.
