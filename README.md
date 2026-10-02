@@ -57,32 +57,6 @@ Include a generated reference table with its registered name:
 
 See [procedure](docs/procedure.md) for refreshing package and contract pins. Builds use only this repository and installed npm packages.
 
-## Cloudflare Pages
-
-The `minifield-docs` Pages project connects to [Minifield-Labs/minifield-docs](https://github.com/Minifield-Labs/minifield-docs). Pushes to `feat/initial-docs` publish to [minifield-docs.pages.dev](https://minifield-docs.pages.dev/). Other branches receive preview deployments.
-
-| Setting | Value |
-| --- | --- |
-| Project | `minifield-docs` |
-| Production branch | `feat/initial-docs` |
-| Root directory | Repository root |
-| Build command | `npm run build` |
-| Build output | `dist` |
-| Node version | `24.2.0` |
-
-The build writes one HTML file per route, `404.html`, a search index, browser JavaScript, CSS, and local fonts. Upload only `dist/`. It needs no Worker, SSR runtime, database, API credentials, or private package token.
-
-For direct upload with an installed and authenticated Wrangler:
-
-```sh
-npm run build
-wrangler pages deploy dist --project-name minifield-docs
-```
-
-The Git remote is `git@github.com:Minifield-Labs/minifield-docs.git`. The production branch is also the repository's initial default branch. Update both GitHub and Pages when adopting a different production branch. The project uses its Pages hostname and has no custom domain.
-
-Cloudflare reads `public/_headers` from the exported directory. The top-level `404.html` preserves normal missing-page responses rather than a single-page-app fallback. See [Cloudflare’s static HTML guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
-
 ## Design and module structure
 
 `src/content.ts` exposes `loadDocs()` and `searchEntries()`. It hides frontmatter checks, Markdown compilation, syntax highlighting, heading IDs, ordering, and index preparation behind one content interface.
