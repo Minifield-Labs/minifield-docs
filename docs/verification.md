@@ -1,4 +1,4 @@
-# Initial verification
+# Documentation verification
 
 ## Example review guide, October 3, 2026
 
@@ -17,6 +17,8 @@ the viewport. Its complete article and links also loaded with JavaScript disable
 The temporary loopback preview servers stopped after verification. Screenshots
 and the browser result are retained outside Git in the workspace's registered
 `.artifacts/example-reader/` directory. Production publication remains separate.
+
+## Initial checks, October 1, 2026
 
 Checked October 1, 2026 against the local production preview at `http://127.0.0.1:4330/`.
 
