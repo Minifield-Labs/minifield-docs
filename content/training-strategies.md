@@ -2,7 +2,7 @@
 title: Strategies and settings
 description: Match the recipe schema to its training strategy and numerical settings.
 group: Training
-order: 55
+order: 56
 ---
 
 The worker dispatches on the recipe’s schema version and `model.implementation`. Keep both identifiers with the recipe and exported artifacts.

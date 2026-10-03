@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-02",
+  "reviewed_on": "2026-10-03",
   "sources": [
     {
       "repository": "landing-page",
@@ -434,6 +434,69 @@
       "revision": "1f3b52a5ab8cebb2d330d2584fe1d71eb98f6c2c",
       "working_tree_modified": false,
       "sha256": "d40adbf99b35bad55890b4a8480258e081c7b9e7714e4ceb5d117125a7fe216a"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/example_contracts.py",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "394ed237a54398c2eeb52ca4ce0be69069db97f010be851b2b6bde6d51c763c6"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/example_api.py",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "a3a2bff56de6163b36f34550538468543e9abde6a3a87e72261be7e8fb9dae77"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/example_files.py",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "aadcfadafbf5f0afa3c0f9737ee76641801514a9fdda4b71878d1898cf5158bc"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/examples.py",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "43995297b7f6dcec432593c307f1b6fe8098bb4d372f593b58772e0356216163"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/alembic/versions/0002_examples.py",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "cae4ec0beed0a0d64fe00b9e03fc7bfa6746e28e2a4abbe3153a74144d46056a"
+    },
+    {
+      "repository": "backend",
+      "path": "docs/examples.md",
+      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "working_tree_modified": false,
+      "sha256": "6e1c525d57bc66911154e8722dad3729979b41e11ce2c4ae934cee08f24cd8f2"
+    },
+    {
+      "repository": "platform",
+      "path": "application/src/commands/examples.ts",
+      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "working_tree_modified": false,
+      "sha256": "87e9e89835e96b459aec894968ecf91964a98ac6b097b84cfd5d1ea5d8fd1757"
+    },
+    {
+      "repository": "platform",
+      "path": "application/src/features/ExamplesPage.tsx",
+      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "working_tree_modified": false,
+      "sha256": "ffa2778e04a61875c73cd065e494b416f5131b706450ead3158e5958e17d426d"
+    },
+    {
+      "repository": "platform",
+      "path": "application/docs/examples.md",
+      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "working_tree_modified": false,
+      "sha256": "6865ad9c9f9e73a5c0cf6e2f92b197ea54396469368a209019f87b633e23bde7"
     }
   ],
   "packages": [

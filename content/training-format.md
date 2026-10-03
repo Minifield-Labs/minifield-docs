@@ -2,7 +2,7 @@
 title: Serialization and packing
 description: Follow authored decisions into model context, supervised targets, and packed training rows.
 group: Training
-order: 54
+order: 55
 ---
 
 Training turns each supervised trajectory step into a decision record, then serializes that record for the selected strategy. The serializer defines the exact model input and the tokens that contribute to training loss.

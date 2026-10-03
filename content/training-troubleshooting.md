@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Diagnose recipe, input, device, packing, decoding, and checkpoint failures.
 group: Training
-order: 59
+order: 60
 ---
 
 Start with `result.json` and the last event’s `phase` in `events.jsonl`. Attempt files live under `<output-root>/<job_id>/<attempt_id>`.

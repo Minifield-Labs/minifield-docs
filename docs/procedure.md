@@ -4,6 +4,8 @@
 
 1. Read the owning product’s current README, public types, and relevant technical guide.
 2. Edit the matching content page. Use the exported interface’s actual names and supported values.
+   Assign each page a unique integer `order`. Shift later orders when inserting a
+   page, preserving its filename and URL.
 3. Refresh the source path, revision, and SHA-256 in sources.json.
 4. Review all visible copy and links. Keep operational details useful to the reader. Keep internal engineering evidence here.
 
