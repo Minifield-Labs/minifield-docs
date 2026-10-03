@@ -9,6 +9,9 @@ Write the requests your product should handle, the actions it should take, and t
 
 Each selection in a computation `9.0.0` through `13.0.0` points to 2 files: trajectory YAML and source metadata JSON. The worker verifies their hashes, applies the saved product instructions and wording, then prepares the selected strategy's training examples.
 
+The [example review guide](/training-examples/) covers importing input/output
+records and reviewing their selection in the platform.
+
 ## Author a trajectory
 
 This synthetic task manager changes a task's priority. The same sampled priority appears in the user request, tool arguments, result, and completion.

@@ -2,7 +2,7 @@
 title: Checkpoints and exports
 description: Recover training state, verify attempt artifacts, and package models for Runtime.
 group: Training
-order: 58
+order: 59
 ---
 
 Each attempt writes its recipe, ordered events, result, evaluation, and model artifacts beneath `<output-root>/<job_id>/<attempt_id>/`. Keep this directory with the pinned inputs and installed worker revision.

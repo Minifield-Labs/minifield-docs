@@ -2,7 +2,7 @@
 title: Python API
 description: Load typed recipes, inspect strategies, run a worker, and verify its artifacts from Python.
 group: Training
-order: 56
+order: 57
 ---
 
 Use the installed `minifield_training` modules to validate recipes and connect training to your own scripts. Run these examples in the Python 3.12 environment from [installation](/training-worker/#install-the-worker).

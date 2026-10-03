@@ -1,4 +1,24 @@
-# Initial verification
+# Documentation verification
+
+## Example review guide, October 3, 2026
+
+Added the Training guide for importing, browsing and reviewing examples, linked
+from Training data. Its navigation order follows Training data and precedes the
+training format guide. Source revisions and SHA-256 values pin the implemented
+backend contracts and platform reader.
+
+`npm run check` passed TypeScript, lint, 7 checked source examples, schema pins,
+8 generated reference tables, the production build and browser enhancement
+regressions. The export contains 24 pages and the 404 page, with 1,663 checked
+local links/assets and a 3,525-byte enhancement bundle.
+
+The built guide was inspected in Chrome at 1440 px and 320 px. Both layouts fit
+the viewport. Its complete article and links also loaded with JavaScript disabled.
+The temporary loopback preview servers stopped after verification. Screenshots
+and the browser result are retained outside Git in the workspace's registered
+`.artifacts/example-reader/` directory. Production publication remains separate.
+
+## Initial checks, October 1, 2026
 
 Checked October 1, 2026 against the local production preview at `http://127.0.0.1:4330/`.
 

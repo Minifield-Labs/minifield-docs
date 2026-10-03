@@ -2,7 +2,7 @@
 title: Evaluation
 description: Measure held-out loss, decoded actions, rejection behavior, and training usage.
 group: Training
-order: 57
+order: 58
 ---
 
 Evaluate on case families held out before wording expansion. Keep the action contract and serialization identical to the training recipe, then compare the exact exported model in Runtime.
