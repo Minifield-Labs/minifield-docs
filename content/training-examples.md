@@ -38,6 +38,23 @@ Parquet files use JSON strings in the `input` and `output` columns. They can als
 contain `output_type`, `split` and `source_id`. For example, the JSON boolean false
 is stored as the string `false`, while a text output is stored with JSON quotes.
 
+## Import from Hugging Face
+
+1. Select a dataset in **Examples** and choose **Import from Hugging Face**.
+2. Enter the Hugging Face repository name or dataset URL. Select **Load dataset**.
+3. Choose a source subset/split and select its input columns and output column.
+4. Choose the output type and **Training** or **Evaluation**. Enter a row range,
+   or leave **Examples** empty to import the complete split.
+5. Select **Import dataset**. Use **Pause import** and **Resume import** to control it.
+
+One input column keeps its original value. Multiple input columns become an object
+with each column name as a key. The output keeps its original value. **Preview
+source row** shows the data before import.
+
+The importer accepts public text and JSON datasets with a complete Hugging Face
+viewer split. Each imported example receives its own ID. Imported rows appear in
+source order and retain a source reference for review.
+
 ## Browse and review
 
 Choose a dataset and filter by selection, split or output type. **Dataset order**

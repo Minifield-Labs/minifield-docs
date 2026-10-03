@@ -445,9 +445,9 @@
     {
       "repository": "backend",
       "path": "src/minifield_backend/example_api.py",
-      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "revision": "0e25721b396b847edb7f8b674e27c6d0787eb56e",
       "working_tree_modified": false,
-      "sha256": "a3a2bff56de6163b36f34550538468543e9abde6a3a87e72261be7e8fb9dae77"
+      "sha256": "065776e85f8174f971364139f7c11b8745818311723428af81dc093dd8267084"
     },
     {
       "repository": "backend",
@@ -473,30 +473,44 @@
     {
       "repository": "backend",
       "path": "docs/examples.md",
-      "revision": "b4affd4eb861f7c87c2c8bfbf49c47f6ba3d7b6c",
+      "revision": "0e25721b396b847edb7f8b674e27c6d0787eb56e",
       "working_tree_modified": false,
-      "sha256": "6e1c525d57bc66911154e8722dad3729979b41e11ce2c4ae934cee08f24cd8f2"
+      "sha256": "e10c64fbf68fa392d27161b9ad3d7f7760fbc0d0ec91504ca2303a4f062712f2"
     },
     {
       "repository": "platform",
       "path": "application/src/commands/examples.ts",
-      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "revision": "680d27c4aeee4c0d0ca31c700036bfd7a8b282e8",
       "working_tree_modified": false,
-      "sha256": "87e9e89835e96b459aec894968ecf91964a98ac6b097b84cfd5d1ea5d8fd1757"
+      "sha256": "269bae9c39713e70a127eae81c2cdff1e1f2366e60485ce0eeb56cef2537aa6c"
     },
     {
       "repository": "platform",
       "path": "application/src/features/ExamplesPage.tsx",
-      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "revision": "680d27c4aeee4c0d0ca31c700036bfd7a8b282e8",
       "working_tree_modified": false,
-      "sha256": "ffa2778e04a61875c73cd065e494b416f5131b706450ead3158e5958e17d426d"
+      "sha256": "9228da41c835e2240a34126a85d4e8f6a743bb1e5a5ea4fb60b20efa20c22026"
     },
     {
       "repository": "platform",
       "path": "application/docs/examples.md",
-      "revision": "0b829ccf9e0ea4cc04a5b2320fd0174828285279",
+      "revision": "680d27c4aeee4c0d0ca31c700036bfd7a8b282e8",
       "working_tree_modified": false,
-      "sha256": "6865ad9c9f9e73a5c0cf6e2f92b197ea54396469368a209019f87b633e23bde7"
+      "sha256": "4f84de81696694bba8a0efed11bad0fddef3e9dc4cb3a3d8c17d480ff1ade497"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/huggingface_datasets.py",
+      "revision": "0e25721b396b847edb7f8b674e27c6d0787eb56e",
+      "working_tree_modified": false,
+      "sha256": "09da4c3b377a49c710acd60dd00ccaa047b1343440d7371848047470a5909208"
+    },
+    {
+      "repository": "platform",
+      "path": "application/src/features/HuggingFaceImport.tsx",
+      "revision": "680d27c4aeee4c0d0ca31c700036bfd7a8b282e8",
+      "working_tree_modified": false,
+      "sha256": "10f8296808727f4873ea244e9f0244174724036690c6d215d81b70cd594198e4"
     }
   ],
   "packages": [
