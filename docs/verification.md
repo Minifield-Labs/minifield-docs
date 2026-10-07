@@ -115,3 +115,14 @@ Training now has 10 guides. Added Write a recipe, Serialization and packing, Pyt
 - Ignored local evidence includes `.local/validate-training-docs.py`, `.local/training-expansion-accessibility.json`, `.local/training-expansion-reflow.json`, and `.local/training-expanded.jpg`. The previous accessibility section records the broader keyboard, no-JavaScript, reduced-motion, and forced-color checks.
 - Validation and handoff cleanup stayed within the workspace artifact limits. Cleanup found no removable intermediates, with 8,034,504,704 bytes of task storage and 27,809,546,240 bytes free.
 - This remains a local preview and feature branch. The repository has no remote or PR base branch.
+
+## Platform MCP guide, October 7, 2026
+
+Added the Training MCP access guide with product-scoped connection instructions,
+the bearer-header configuration, the reviewed 19-action inventory, and write
+retry keys. Source provenance records the backend transport, grant inventory,
+backend guide and platform connection panel. The content describes the locally
+verified implementation; publication is a separate step.
+
+`npm run check` passed: types, lint, checked examples, production build, 25
+static pages, 1,781 local links/assets, search coverage and enhancement checks.

@@ -588,6 +588,34 @@
       "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
       "working_tree_modified": false,
       "sha256": "21ecdfa5c82c398fe3ce0eb1ba877c880f0d431c26f44b57cd4a4713dd1d69ad"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/mcp_api.py",
+      "revision": "caf50833184709dd5d002014d1cfdc098e22e7de",
+      "working_tree_modified": false,
+      "sha256": "b253be7612620fd5a737b9510697318f62e0ae46b5cec908a7ec5536f3fd2547"
+    },
+    {
+      "repository": "backend",
+      "path": "src/minifield_backend/automation.py",
+      "revision": "caf50833184709dd5d002014d1cfdc098e22e7de",
+      "working_tree_modified": false,
+      "sha256": "a2ee8eb70f3498316d3b070f52b5c8ce8b518a0e3305b54f1df4e9fc9d10af0b"
+    },
+    {
+      "repository": "backend",
+      "path": "docs/mcp.md",
+      "revision": "caf50833184709dd5d002014d1cfdc098e22e7de",
+      "working_tree_modified": false,
+      "sha256": "e1cdb6829c697e4790d7067dbcfd64cd8024637ae3dd1412c87cd9bf823dc48b"
+    },
+    {
+      "repository": "platform",
+      "path": "application/src/live/BrowserTools.tsx",
+      "revision": "9e7a1029f4138d0fcdaf2828dbe6405f4a1e8f53",
+      "working_tree_modified": false,
+      "sha256": "8150363e4dfa23e7284de6a9168487f44ae78850625d6dace0ddc348232ee9ec"
     }
   ],
   "packages": [
