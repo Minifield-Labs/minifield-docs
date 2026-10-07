@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-03",
+  "reviewed_on": "2026-10-07",
   "sources": [
     {
       "repository": "landing-page",
@@ -511,6 +511,83 @@
       "revision": "680d27c4aeee4c0d0ca31c700036bfd7a8b282e8",
       "working_tree_modified": false,
       "sha256": "10f8296808727f4873ea244e9f0244174724036690c6d215d81b70cd594198e4"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "docs/sampling.md",
+      "revision": "880a14b617900f6b5426a51aee09d7eb0f418c7b",
+      "working_tree_modified": false,
+      "sha256": "907de00710935dbf0ef61a9685b88cbe51bd5300681d56f078e2311ccc894c0b"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/planning/sampling.py",
+      "revision": "880a14b617900f6b5426a51aee09d7eb0f418c7b",
+      "working_tree_modified": false,
+      "sha256": "b73213cccc654dd42b0ae9cef525334f1db4d50dba2e3798f0cead440a6cc1c7"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/planning/traversal.py",
+      "revision": "880a14b617900f6b5426a51aee09d7eb0f418c7b",
+      "working_tree_modified": false,
+      "sha256": "d032d3a88ced2af5d03f2ceb37b4e314863a3a53c1686a56811eaf6b5259d557"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/execution/generation.py",
+      "revision": "880a14b617900f6b5426a51aee09d7eb0f418c7b",
+      "working_tree_modified": false,
+      "sha256": "4c0fbf9b8c46203fa893e37e9cee57f727b4e4c8cae75810299ae12afb8fe0b3"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "docs/generated-worlds.md",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "91ca8e25d7fd1bdddfb7f681c96fc61a34d7218330283fbaea318defbf9abcde"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/compiler/generation.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "f189a106e79e9ed8be65f7208e12e3bef229bcd42733ec0c8be992aa47d20d07"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/runtime/worlds.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "a30351be529dfd5a957420a83aa614c19f832e588f31eb464bfbc35bbc312c79"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/runtime/invariants.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "f083d597755764a741d0b9db06283686aa910fe9142515c71e757311d45f9ab8"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/runtime/evaluation.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "31fdc7c580d2ef150c97369852ec97a94aca43a56fa6ef6994dfcc533428daee"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/execution/datasets.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "bfd79387e0ac3e08b0d1b8a217caa94c2c9525e6e9b959443c515512d756c526"
+    },
+    {
+      "repository": "minifield-environments",
+      "path": "src/minifield_environments/planning/distributions.py",
+      "revision": "9433ce95512d33e885f2e63428fdbc6d2ec42e3e",
+      "working_tree_modified": false,
+      "sha256": "21ecdfa5c82c398fe3ce0eb1ba877c880f0d431c26f44b57cd4a4713dd1d69ad"
     }
   ],
   "packages": [
