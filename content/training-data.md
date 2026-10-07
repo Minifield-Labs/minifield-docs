@@ -14,6 +14,20 @@ records and reviewing their selection in the platform.
 
 ## Author a trajectory
 
+For product actions, you can prepare trajectories from a declared initial state
+and supported tool functions. Sample reachable partial final states, then find
+their shortest valid tool paths. Every supplied final value constrains
+completion. Omitted fields can change through valid product actions.
+
+Keep arguments grounded in public context and earlier tool results. Replay
+the computed calls and results. Group verified tasks by call count to build a
+curriculum that gradually increases chain length.
+
+Create user wording that expresses every requested final value with public
+record references. Keep prerequisite actions and incidental effects in the
+trajectory. Save the verified calls and results as trajectory YAML, then freeze
+the wording and source metadata with that case.
+
 This synthetic task manager changes a task's priority. The same sampled priority appears in the user request, tool arguments, result, and completion.
 
 ```yaml
