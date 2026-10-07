@@ -37,6 +37,7 @@ Start with [installation and execution](/training-worker/). [Training data](/tra
 | Follow decisions into model inputs, supervision, and physical rows | [Serialization and packing](/training-format/) |
 | Validate recipes and inspect installed strategies in Python | [Python API](/training-python/) |
 | Diagnose validation, CUDA, packing, or recovery failures | [Troubleshooting](/training-troubleshooting/) |
+| Connect an MCP client to the platform | [MCP access](/training-mcp/) |
 
 For a first packed-SFT run, install the worker, stage your inputs, and fill in the complete recipe. Validate it before execution, then inspect the attempt's final evaluation and exported assets.
 
