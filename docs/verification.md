@@ -126,3 +126,17 @@ verified implementation; publication is a separate step.
 
 `npm run check` passed: types, lint, checked examples, production build, 25
 static pages, 1,781 local links/assets, search coverage and enhancement checks.
+
+
+## Renewable MCP guide, October 7, 2026
+
+The guide now describes 24-hour access, 90-day rotating refresh credentials,
+owner-only credential import and Codex's HTTP header helper. It records the
+explicit refresh endpoint and exact-retry key. The backend's migration and
+security checks passed. Installed Codex initialized the locally built MCP server
+and refreshed credentials with the browser closed. Source provenance now includes
+the token service and credential helper. Hosted deployment and the user's actual
+connection remain separate from the disposable local acceptance.
+
+`npm run check` passed after the renewal guide update: types, lint, examples,
+static build, all 25 pages, 1,781 links/assets, search and enhancement checks.
